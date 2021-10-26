@@ -1,0 +1,24 @@
+#nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    background-color: #474747;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nav-item {
+    color: #F5F7FA;
+    background-color: #000;
+    padding: 10px 0;
+    width: 100%;
+}
+a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #F5F7FA;
+    text-decoration: none;
+}
