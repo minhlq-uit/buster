@@ -1,0 +1,19 @@
+@font-face {
+  font-family: Bebas;
+  src: url(./assets/fonts/BebasNeue-Regular.otf);
+}
+
+:root {
+  --main-text-color: #f5f6f7;
+  --secondary-text-color: #a5a09f;
+  --main-color: #1cd4d4;
+  color: var(--main-text-color);
+  background-color: #121212;
+  font-family: Poppins;
+  font-weight: 400;
+
+  .main-container {
+    width: calc(100% - 100px);
+    transform: translateX(100px) translateY(99px);
+  }
+}
