@@ -1,0 +1,145 @@
+#top-bar {
+  z-index: 999;
+  background-color: #161616;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: calc(100% - 100px);
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .icon {
+    font-size: 30px;
+  }
+  .left {
+    display: flex;
+    margin-left: 10px;
+    font-weight: 500;
+    textarea {
+      height: 10px;
+    }
+    .boxContainer {
+      position: relative;
+
+      .genreBox,
+      .yearBox {
+        display: flex;
+        align-items: center;
+        border: 2px var(--main-color) solid;
+        border-radius: 5px;
+        padding: 8px 6px 8px 12px;
+        margin: 0px 20px;
+        span {
+          margin-right: 30px;
+        }
+      }
+      .genreSelect {
+        width: 390px;
+      }
+      .genreSelect,
+      .yearSelect {
+        display: flex;
+        background-color: #1e1e1e;
+        position: absolute;
+        padding: 15px;
+        top: 60px;
+        left: 20px;
+        flex-direction: column;
+        flex-wrap: wrap;
+        line-height: 1.8;
+        max-height: 250px;
+        border-radius: 5px;
+        input {
+          width: 100px;
+          border: 1px solid #707070;
+          background-color: transparent;
+          border-radius: 3px;
+          color: white;
+          font-weight: 500;
+        }
+        .genre {
+          cursor: pointer;
+          max-width: 130px;
+          &:hover {
+            color: var(--main-color);
+          }
+        }
+
+        .yearSelect {
+          width: 120px;
+        }
+      }
+    }
+  }
+  .middle {
+    form {
+      display: flex;
+      height: 45px;
+      border-radius: 5px;
+      overflow: hidden;
+      input {
+        width: 600px;
+        background-color: #303030;
+        border: none;
+        padding: 15px;
+        color: #9fb3c8;
+        font-weight: 400;
+        outline: none;
+      }
+      ::placeholder {
+        font-weight: 400;
+        color: #9fb3c8;
+      }
+      .searchIcon {
+        height: 100%;
+        width: 45px;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        background-color: var(--main-color);
+        color: black;
+      }
+    }
+  }
+  .right {
+    display: flex;
+    align-items: center;
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0px 20px;
+    }
+    .profile {
+      cursor: pointer;
+      margin-right: 25px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      .main-profile {
+        display: flex;
+        align-items: center;
+      }
+      .options {
+        width: 260px;
+        position: absolute;
+        top: 60px;
+        right: 5px;
+        background-color: #1e1e1e;
+        .otherUsers {
+          border-bottom: solid 1px #707070;
+          .user {
+            display: flex;
+            align-items: center;
+          }
+        }
+        .menu {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

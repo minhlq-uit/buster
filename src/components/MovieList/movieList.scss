@@ -1,0 +1,44 @@
+.list {
+  width: 100%;
+  margin-top: 50px;
+  position: relative;
+  max-height: 290px;
+
+  .listTitle {
+    text-transform: uppercase;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 50px;
+  }
+  .iconContainer {
+    position: absolute;
+    right: 20px;
+    top: -5px;
+    display: flex;
+    .icon {
+      background-color: #232323;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 10px;
+    }
+  }
+  .wrapper {
+    width: 100%;
+    margin-top: 15px;
+    overflow: hidden;
+
+    .container {
+      display: flex;
+      margin-left: 50px;
+      width: max-content;
+      margin-top: 10px;
+      transform: translateX(0px);
+      transition: all 0.5s ease;
+    }
+  }
+}
