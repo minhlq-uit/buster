@@ -1,9 +1,12 @@
 .MovieListItem {
   margin-right: 29px;
   cursor: pointer;
-  width: 250px;
+  max-width: 250px;
 
   img {
+    height: 100%;
+    overflow: hidden;
+    max-height: 140.5px;
     width: 100%;
   }
   .item-info {
@@ -15,10 +18,14 @@
       font-weight: 500;
       margin-top: 10px;
     }
-    .genre {
-      font-size: 12px;
+  }
+  .details {
+    margin-top: 8px;
+
+    display: flex;
+    .year {
+      font-size: 15px;
       color: #707070;
-      margin-top: 5px;
     }
   }
 }

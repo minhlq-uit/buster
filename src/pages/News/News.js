@@ -1,3 +1,8 @@
+import "./news.scss";
 export default function News() {
-    return <h1>This is News</h1>
+  return (
+    <div className="news">
+      <div className="main-title">News</div>
+    </div>
+  );
 }

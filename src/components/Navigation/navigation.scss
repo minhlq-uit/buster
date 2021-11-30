@@ -19,6 +19,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    &--activated {
+      @extend .nav-item;
+      color: var(--main-color);
+      background-color: #1E4A47;
+      font-weight: 500;
+    }
     .icon {
       margin-bottom: 5px;
     }

@@ -1,0 +1,114 @@
+.bannerContent {
+  opacity: 1;
+  position: relative;
+  width: 100%;
+
+  .img {
+    height: 620px;
+    width: 100%;
+    object-position: 0px 0px;
+    object-fit: cover;
+  }
+  .filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 620px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  .slide-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 70%;
+    margin-top: 70px;
+    margin-left: 80px;
+    .tag span {
+      text-transform: uppercase;
+      font-size: 1.5em;
+      font-weight: 500;
+      border: var(--main-color) solid 2px;
+      padding: 7px 4px;
+    }
+    .title {
+      margin-top: 20px;
+      font-size: 80px;
+      font-weight: 500;
+      max-width: 700px;
+      line-height: 1em;
+    }
+    .yearGenre {
+      .separator {
+        margin: 0px 10px;
+      }
+    }
+    .desc {
+      margin: 20px 0px;
+      max-width: 460px;
+    }
+
+    .buttons {
+      display: flex;
+      // margin-top: 38px;
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 var(--main-color);
+        }
+      }
+      .watchBtn {
+        font-size: 1.1em;
+        color: black;
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        font-weight: 500;
+        background-color: var(--main-color);
+        border: none;
+        border-radius: 4px;
+        padding: 10px 25px;
+        margin-right: 25px;
+        cursor: pointer;
+        .playIcon {
+          font-size: 1.5em;
+        }
+        span {
+          margin-left: 5px;
+        }
+        &:hover,
+        &:focus {
+          animation: pulse 1s;
+          box-shadow: 0 0 0 1em rgba(#fff, 0);
+        }
+      }
+      .addPlaylistBtn {
+        font-size: 1.1em;
+        color: var(--main-color);
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        font-weight: 500;
+        background-color: transparent;
+        border: solid var(--main-color) 2px;
+        border-radius: 4px;
+        padding: 10px 12px;
+        margin-right: 25px;
+        cursor: pointer;
+        .playIcon {
+          font-size: 1.5em;
+        }
+        span {
+          margin-left: 5px;
+        }
+        &:hover,
+        &:focus {
+          animation: pulse 1s;
+          box-shadow: 0 0 0 1em rgba(#fff, 0);
+        }
+      }
+    }
+  }
+}

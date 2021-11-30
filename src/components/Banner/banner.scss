@@ -1,0 +1,14 @@
+.banner {
+  width: 100%;
+  .dots {
+    position: absolute;
+    top: -30px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+  .slick-dots .slick-active .dots {
+    background-color: white;
+  }
+}

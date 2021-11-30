@@ -1,3 +1,8 @@
-export default function MyList() {
-    return <h1>This is MyList</h1>
+import "./myList.scss";
+export default function News() {
+  return (
+    <div className="myList">
+      <div className="main-title">My List</div>
+    </div>
+  );
 }
