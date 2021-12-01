@@ -4,6 +4,10 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import SearchIcon from "@mui/icons-material/Search";
 import { useState, useEffect } from "react";
 import axios from "axios";
+// minh
+import { Link } from "react-router-dom";
+
+
 export default function Topbar() {
   const profile_pic =
     "https://i.pinimg.com/originals/2b/90/0d/2b900d5612554cd0b5edf7d8e848c3ea.png";
@@ -27,6 +31,9 @@ export default function Topbar() {
     };
     fetchData();
   }, [fetchURL]);
+
+
+
   return (
     <div id="top-bar">
       <div className="left">
@@ -116,7 +123,10 @@ export default function Topbar() {
               <div className="menu">
                 <span>Account</span>
                 <span>Help Center</span>
-                <span>Log Out</span>
+                {/* <span onClick={routeChange}>Log Out</span> */}
+                <Link to="/Login" >
+                  <span>Log Out</span>
+                </Link>
               </div>
             </div>
           )}
@@ -125,3 +135,4 @@ export default function Topbar() {
     </div>
   );
 }
+
