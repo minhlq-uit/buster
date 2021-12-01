@@ -72,6 +72,7 @@ export default function Navigation() {
             location.pathname === "/News" ? "nav-item--activated" : "nav-item"
           }
         >
+
           <NewsIcon className="icon" />
           News
         </div>
