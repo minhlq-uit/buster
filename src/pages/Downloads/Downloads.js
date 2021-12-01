@@ -1,3 +1,8 @@
+import "./downloads.scss";
 export default function Downloads() {
-    return <h1>This is Downloads</h1>
+  return (
+    <div className="downloads">
+      <div className="main-title">Downloads</div>
+    </div>
+  );
 }

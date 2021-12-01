@@ -1,0 +1,31 @@
+.continue-item {
+  display: flex;
+  height: 100px;
+  padding-right: 50px;
+  img {
+    margin-right: 10px;
+  }
+  .movie-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: 500;
+    padding-top: 5px;
+    .progress-container {
+      .progress-text {
+        color: #969799;
+        font-size: 0.9em;
+        text-align: right;
+      }
+      .duration {
+        width: 180px;
+        height: 5px;
+        background-color: #3b8581;
+        .progress {
+          height: 5px;
+          background-color: var(--main-color);
+        }
+      }
+    }
+  }
+}

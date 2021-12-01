@@ -1,3 +1,8 @@
+import "./series.scss";
 export default function Series() {
-    return <h1>This is Series</h1>
+  return (
+    <div className="series">
+      <div className="main-title">Series</div>
+    </div>
+  );
 }
