@@ -1,65 +1,97 @@
 import MovieListItem from "./MovieListItem/MovieListItem";
 import "./movieList.scss";
-import MovieListRequest from "./MovieListRequest";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import { useState, useEffect, useRef } from "react";
-import axios from "axios";
+import LeftArrow from "./Arrow/LeftArrow";
+import RightArrow from "./Arrow/RightArrow";
+import { useState, useEffect } from "react";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import tmdbApi, { category, movieType, tvType } from "../../api/tmdbApi";
 
-export default function MovieList({ index }) {
+export default function MovieList(props) {
   const [list, setList] = useState([]);
-  const genre = Object.keys(MovieListRequest)[index];
-  const ListTitle = `Popular ${genre} Movie`;
-  const fetchURL = MovieListRequest[Object.keys(MovieListRequest)[index]];
-
-  const max_movie_list = 19; // be hon 20
+  // const genre = Object.keys(MovieListRequest)[];
+  const settings = {
+    infinite: true,
+    slidesToShow: 6,
+    // slidesToScroll: 2,
+    swipeToSlide: true,
+    nextArrow: <RightArrow />,
+    prevArrow: <LeftArrow />,
+    responsive: [
+      {
+        breakpoint: 1700,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        },
+      },
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: 913,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const res = await axios.get(fetchURL);
-        setList(res.data.results.slice(0, max_movie_list));
-      } catch (err) {
-        console.log(err);
+      let response = null;
+      const params = {};
+
+      if (props.type !== "similar") {
+        switch (props.category) {
+          case category.movie:
+            if (props.type === movieType.trending) {
+              response = await tmdbApi.getTrendingList(props.category, {
+                params,
+              });
+            } else {
+              response = await tmdbApi.getMoviesList(props.type, { params });
+            }
+            break;
+          default:
+            if (props.type === tvType.trending) {
+              response = await tmdbApi.getTrendingList(props.category, {
+                params,
+              });
+            } else {
+              response = await tmdbApi.getTvList(props.type, { params });
+            }
+            break;
+        }
+      } else {
+        response = await tmdbApi.similar(props.category, props.id);
       }
+      setList(response.results);
     };
     fetchData();
-  }, [fetchURL]);
-  const [slideNumber, setSlideNumber] = useState(0);
-  const listRef = useRef();
-  const handleClick = (direction) => {
-    let distance = listRef.current.getBoundingClientRect().x;
-    if (direction === "left" && slideNumber > 1) {
-      setSlideNumber(slideNumber - 3);
-      listRef.current.style.transform = `translate(${distance + 129 + 279}px)`;
-    }
-    if (direction === "right" && slideNumber < list.length - 5) {
-      setSlideNumber(slideNumber + 3);
-      listRef.current.style.transform = `translate(${distance - 429 - 279}px)`;
-    }
-  };
+  }, [props.id, props.category, props.type]);
   return (
     <div className="list">
-      <span className="listTitle">{ListTitle}</span>
-      <div className="iconContainer">
-        <div className="icon">
-          <ChevronLeftIcon
-            className="sliderArrow left"
-            onClick={() => handleClick("left")}
-          />
-        </div>
-        <div className="icon">
-          <ChevronRightIcon
-            className="sliderArrow right"
-            onClick={() => handleClick("right")}
-          />
-        </div>
-      </div>
+      <span className="listTitle">{props.title}</span>
       <div className="wrapper">
-        <div className="container" ref={listRef}>
-          {list.map((movie) => (
-            <MovieListItem movie={movie} />
-          ))}
-        </div>
+        <Slider {...settings}>
+          {list &&
+            list.map((item, i) => (
+              <MovieListItem key={i} item={item} category={props.category} />
+            ))}
+        </Slider>
       </div>
     </div>
   );
