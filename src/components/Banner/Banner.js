@@ -30,7 +30,6 @@ export default function Banner() {
         params,
       });
       setBannerList(response.results.slice(0, max_banner_item));
-      console.log(bannerList);
     };
     getMovies();
   }, []);
@@ -38,8 +37,8 @@ export default function Banner() {
   return (
     <div className="banner">
       <Slider {...settings}>
-        {bannerList.map((item) => {
-          return <BannerItem item={item} />;
+        {bannerList.map((item, i) => {
+          return <BannerItem key={i} item={item} />;
         })}
       </Slider>
     </div>

@@ -1,6 +1,5 @@
 import MovieList from "../../components/MovieList/MovieList";
 import Banner from "../../components/Banner/Banner";
-import ContinueWatching from "../../components/ContinueWatching/ContinueWatching";
 import "./home.scss";
 import { category, movieType, tvType } from "../../api/tmdbApi";
 export default function Home() {

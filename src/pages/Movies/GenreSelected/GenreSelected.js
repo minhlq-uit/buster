@@ -3,7 +3,7 @@ import { useLocation } from "react-router";
 import MovieListItem from "../../../components/MovieList/MovieListItem/MovieListItem";
 import CustomPagination from "../../../components/Pagination/CustomPagination";
 import tmdbApi from "../../../api/tmdbApi";
-import { category, movieType, tvType } from "../../../api/tmdbApi";
+import { category } from "../../../api/tmdbApi";
 export default function GenreSelected() {
   const location = useLocation();
   const { id } = location;

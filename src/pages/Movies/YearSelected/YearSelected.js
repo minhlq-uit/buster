@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import MovieListItem from "../../../components/MovieList/MovieListItem/MovieListItem";
 import CustomPagination from "../../../components/Pagination/CustomPagination";
 import tmdbApi from "../../../api/tmdbApi";
-import { category, movieType, tvType } from "../../../api/tmdbApi";
+import { category } from "../../../api/tmdbApi";
 import { useLocation } from "react-router";
 export default function YearSelected() {
   const location = useLocation();

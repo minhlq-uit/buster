@@ -1,10 +1,8 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router";
-import apiConfig from "../../../api/apiConfig";
 import tmdbApi from "../../../api/tmdbApi";
 import MovieListItem from "../../../components/MovieList/MovieListItem/MovieListItem";
-import { category, movieType, tvType } from "../../../api/tmdbApi";
+import { category } from "../../../api/tmdbApi";
 import CustomPagination from "../../../components/Pagination/CustomPagination";
 export default function Search() {
   const location = useLocation();

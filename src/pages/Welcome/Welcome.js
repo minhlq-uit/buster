@@ -1,14 +1,13 @@
-import React from 'react';
-import './welcome.scss';
-import { Link } from 'react-router-dom';
-import Questions from '../../components/Welcome/Questions/Questions';
-import Footer from '../../components/Welcome/Footer/Footer';
+import React from "react";
+import "./welcome.scss";
+import Questions from "../../components/Welcome/Questions/Questions";
+import Footer from "../../components/Welcome/Footer/Footer";
 
 export default function Welcome() {
-    return (
-      <div className="welcome">
-        <Questions />
-        <Footer />
-      </div>
-    );
+  return (
+    <div className="welcome">
+      <Questions />
+      <Footer />
+    </div>
+  );
 }

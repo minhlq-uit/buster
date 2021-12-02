@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import tmdbApi, { category, movieType, tvType } from "../../api/tmdbApi";
+import { category, movieType } from "../../api/tmdbApi";
 import MovieList from "../../components/MovieList/MovieList";
 import SlideList from "../../components/SlideList/SlideList";
 import "./movies.scss";

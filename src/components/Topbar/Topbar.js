@@ -4,8 +4,6 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import SearchIcon from "@mui/icons-material/Search";
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { category, movieType, tvType } from "../../api/tmdbApi";
-import tmdbApi from "../../api/tmdbApi";
 import apiConfig from "../../api/apiConfig";
 import axios from "axios";
 // minh
@@ -63,7 +61,6 @@ export default function Topbar() {
         } else {
           setResults([]);
         }
-        console.log(results);
       });
   }, [query]);
 

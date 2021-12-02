@@ -10,7 +10,6 @@ export default function ListCard(props) {
       const params = {};
       const data = await tmdbApi.detail(props.category, props.id, { params });
       setItem(data);
-      console.log(data);
     };
     fectch();
   }, []);
