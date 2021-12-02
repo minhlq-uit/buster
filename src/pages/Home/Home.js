@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="home">
       <Banner />
-      <ContinueWatching />
+      {/* <ContinueWatching /> */}
       <div className="movieListContainer">
         <MovieList
           category={category.movie}

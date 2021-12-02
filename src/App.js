@@ -32,18 +32,12 @@ function App() {
             <Route exact path="/News" component={News} />
             <Route exact path="/Series" component={Series} />
             <Route exact path="/Settings" component={Settings} />
+            
             <Route path="/views/:category/:id" component={Views} />
+
             <Route exact path="/Movies/Search/:query" component={Search} />
-            <Route
-              exact
-              path="/Movies/YearSelected/:year"
-              component={YearSelected}
-            />
-            <Route
-              exact
-              path="/Movies/GenreSelected/:genre"
-              component={GenreSelected}
-            />
+            <Route exact path="/Movies/YearSelected/:year" component={YearSelected} />
+            <Route exact path="/Movies/GenreSelected/:genre" component={GenreSelected} />
           </div>
         </Switch>
         <Switch>

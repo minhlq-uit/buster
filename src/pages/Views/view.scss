@@ -1,0 +1,47 @@
+.views {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(20, 20, 20, .7);
+        z-index: 0;
+    }
+    .views-top {
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        border-bottom: 3px solid red;
+        .views-top-left {
+            flex: 2;
+            padding: 10px;
+            z-index: 1;
+        }
+        .views-top-right {
+            flex: 3;
+            padding-right: 10px;
+        }
+    }
+    .views-bot {
+        padding: 10px;
+        z-index: 10;
+        .bot-more-title {
+            display: flex;
+            gap: 30px;
+            color: white;
+            // justify-content: space-between;
+            .active {
+                border-bottom: 1px solid var(--main-color);
+            }
+        }
+    }
+    
+}

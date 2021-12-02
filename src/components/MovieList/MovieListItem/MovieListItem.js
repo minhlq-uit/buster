@@ -18,7 +18,15 @@ const MovieListItem = (props) => {
 
   return (
     <div className="MovieListItem">
-      <img src={background} alt="movie-img" />
+      <div className="wrap-img">
+        <img src={background} alt="movie-img" />
+        <Link to={path}>
+          <div className="play-btn-outer">
+              <div className="play-btn">
+              </div>
+          </div>
+        </Link>
+      </div>
       <div className="item-info"></div>
       <div className="title">{item.title || item.name}</div>
       <div className="details">
@@ -31,12 +39,7 @@ const MovieListItem = (props) => {
           - {item.vote_average} <StarSolid />
         </div>
       </div>
-      <Link to={path}>
-        <div className="play-btn-outer">
-            <div className="play-btn">
-            </div>
-        </div>
-      </Link>
+      
       
     </div>
   );
