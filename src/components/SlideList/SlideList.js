@@ -8,51 +8,22 @@ import Slider from "react-slick";
 import "./SlideList.scss";
 export default function SlideList() {
   const [list, setList] = useState([]);
-  // const settings = {
-  //   infinite: true,
-  //   slidesToShow: 6,
-  //   // slidesToScroll: 2,
-  //   swipeToSlide: true,
-  //   nextArrow: <RightArrow />,
-  //   prevArrow: <LeftArrow />,
-  //   responsive: [
-  //     {
-  //       breakpoint: 1700,
-  //       settings: {
-  //         slidesToShow: 4,
-  //         slidesToScroll: 4,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 1280,
-  //       settings: {
-  //         slidesToShow: 3,
-  //         slidesToScroll: 3,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 913,
-  //       settings: {
-  //         slidesToShow: 2,
-  //         slidesToScroll: 2,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 650,
-  //       settings: {
-  //         slidesToShow: 1,
-  //         slidesToScroll: 1,
-  //       },
-  //     },
-  //   ],
-  // };
-  const settings1 = {
-    dots: true,
+  const settings = {
     infinite: true,
-    speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 3,
+    // slidesToScroll: 2,
+    swipeToSlide: true,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 5000,
   };
+  // const settings1 = {
+  //   dots: true,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 3,
+  //   slidesToScroll: 3,
+  // };
   useEffect(() => {
     const getMovies = async () => {
       const params = { page: 1 };
@@ -68,12 +39,11 @@ export default function SlideList() {
   return (
     <div className="slide-list">
       <div className="slide-wrapper">
-        <Slider {...settings1}>
+        <Slider {...settings}>
         {list &&
           list.map((item) => (
-            <div className="slide-item">
               <SlideItem  item={item} category={category.movie} />
-            </div>
+
           ))}
         </Slider>
       </div>
