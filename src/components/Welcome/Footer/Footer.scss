@@ -21,6 +21,7 @@
       font-weight: 500;
       border-bottom: 1px solid #5A5A5C;
       font-family: Bebas;
+      cursor: default;
     }
     .social-networks {
       width: 360px;
@@ -31,9 +32,12 @@
         color: white;
         size: 80px;
         margin-right: 10px;
+        cursor: pointer;
       }
     }
   }
+  /* Links */
+
   .footer-link-wrapper {
     width: 1500px;
     display: flex;
@@ -46,33 +50,25 @@
       text-align: left;
       width: 160px;
       box-sizing: border-box;
-      :last-child {
+      &:last-child {
         width: 300px;
       }
-    }
-
-    .footer-link-items:last-child > a:nth-child(3) {
-      font-weight: 700;
-    }
-
-    .footer-link-items > h2 {
+      h2 {
       color: #616E7C;
       margin-bottom: 16px;
       cursor: default;
-
-    }
-
-    .footer-link-items a {
-      color: white;
-      font-weight: 500;
-      text-decoration: none;
-      margin-bottom: 0.5rem;
-    }
-
-    .footer-link-items a:hover {
-      color: var(--main-color);
-      text-decoration: none;
-      transition: 0.3s ease-out;
+      }
+      a {
+        color: white;
+        font-weight: 500;
+        text-decoration: none;
+        margin-bottom: 0.5rem;
+      }
+      a:hover {
+        color: var(--main-color);
+        text-decoration: none;
+        transition: 0.3s ease-out;
+      }
     }
   }
 
@@ -85,16 +81,15 @@
     font-size: 16px;
     font-weight: 300;
     padding: 10px 0;
-  }
-
     .platforms {
       display: block;
       text-align: center;
+      img {
+        width: 280px;
+        margin: 30px;
+        cursor: pointer;
+      }
     }
-
-    .platforms img {
-      width: 280px;
-      margin: 30px;
-    }
+  }
 }
 

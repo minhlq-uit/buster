@@ -2,19 +2,18 @@
     background-color: white;
     height: 1200px;
     display: flex;
-}
-
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: auto;
-    .wrapper h1 {
-        color: black;
+    .wrapper {
         display: flex;
-        justify-content: center;
-        // flex-direction: column;
-        font-size: 60px;
-        margin-bottom: 50px;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        h1 {
+            color: black;
+            display: flex;
+            justify-content: center;
+            // flex-direction: column;
+            font-size: 60px;
+            margin-bottom: 50px;
+        }
     }
 }

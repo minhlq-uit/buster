@@ -13,6 +13,7 @@ import YearSelected from "./pages/Movies/YearSelected/YearSelected";
 import GenreSelected from "./pages/Movies/GenreSelected/GenreSelected";
 import Login from "./pages/Login/Login"
 import Views from "./pages/Views"
+import Welcome from "./pages/Welcome/Welcome"
 import "./app.scss";
 
 function App() {
@@ -48,6 +49,9 @@ function App() {
         </Switch>
         <Switch>
           <Route exact path="/Login" component={Login} />
+        </Switch>
+        <Switch>
+          <Route exact path="/Welcome" component={Welcome} />
         </Switch>
       </Router>
     </div>
