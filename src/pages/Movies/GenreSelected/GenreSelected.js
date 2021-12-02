@@ -32,7 +32,7 @@ export default function GenreSelected() {
         <div className="container">
           {content.map((item, i) => (
             <div className="item">
-              <MovieListItem key={i} item={item} />
+              <MovieListItem key={i} item={item} category="movie" />
             </div>
           ))}
         </div>

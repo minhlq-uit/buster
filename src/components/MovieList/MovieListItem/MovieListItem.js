@@ -1,7 +1,7 @@
 import apiConfig from "../../../api/apiConfig";
 import "./movieListItem.scss";
 import StarSolid from "../../Star/StarSolid";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const MovieListItem = (props) => {
   // const { item } = props;
@@ -11,7 +11,9 @@ const MovieListItem = (props) => {
     item.backdrop_path ? item.backdrop_path : item.poster_path
   );
   const path =
-    category === "movie" ? `/views/movie/${item.id}/play` : `views/tv/${item.id}/play`;
+    category === "movie"
+      ? `/views/movie/${item.id}/play`
+      : `views/tv/${item.id}/play`;
 
   // const pathInfo =
   //   category === "movie" ? `/movie/${item.id}` : `/tv/${item.id}`;
@@ -22,8 +24,7 @@ const MovieListItem = (props) => {
         <img src={background} alt="movie-img" />
         <Link to={path}>
           <div className="play-btn-outer">
-              <div className="play-btn">
-              </div>
+            <div className="play-btn"></div>
           </div>
         </Link>
       </div>
@@ -39,8 +40,6 @@ const MovieListItem = (props) => {
           - {item.vote_average} <StarSolid />
         </div>
       </div>
-      
-      
     </div>
   );
 };
