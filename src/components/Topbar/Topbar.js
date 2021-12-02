@@ -13,8 +13,16 @@ import { Link } from "react-router-dom";
 import ResultsCards from "../ResultsCards/ResultsCards";
 
 export default function Topbar() {
-  const profile_pic =
-    "https://i.pinimg.com/originals/2b/90/0d/2b900d5612554cd0b5edf7d8e848c3ea.png";
+  const profile_pic1 =
+    "https://i.pinimg.com/564x/a7/76/7b/a7767ba20aee0ac50cfa3046dc913946.jpg";
+  const profile_pic2 =
+    "https://i.pinimg.com/564x/e6/4b/ec/e64beca1b9921925b59671bbf74b9837.jpg";
+  const profile_pic3 =
+    "https://i.pinimg.com/564x/5b/72/68/5b7268fe3d492efa1b4368cff3da5a5d.jpg";
+  const profile_pic4 =
+    "https://i.pinimg.com/564x/e8/a5/3e/e8a53e33f9654e25179c1fb9d53fb873.jpg";
+  const profile_pic5 =
+    "https://i.pinimg.com/564x/a0/1e/5f/a01e5f8fc2f8c77cb82611fbb4f4e38c.jpg";
 
   const [profileSelected, setProfileSelected] = useState(false);
   const [genreSelected, setGenreSelected] = useState(false);
@@ -187,24 +195,28 @@ export default function Topbar() {
               setYearSelected(false);
             }}
           >
-            <img src={profile_pic} alt="profile_pic" />
-            <span className="username">Ngyn Ngyn</span>
+            <img src={profile_pic1} alt="profile_pic" />
+            <span className="username">Le Quang Minh</span>
             <KeyboardArrowDownIcon className="icon" />
           </div>
           {profileSelected && (
             <div className="options">
               <div className="otherUsers">
                 <div className="user">
-                  <img src={profile_pic} alt="profile_pic" />
-                  <span className="username">Ngyn Ngyn</span>
+                  <img src={profile_pic2} alt="profile_pic" />
+                  <span className="username">Nguyen Duc Phuong Nguyen</span>
                 </div>
                 <div className="user">
-                  <img src={profile_pic} alt="profile_pic" />
-                  <span className="username">Ngyn Ngyn</span>
+                  <img src={profile_pic3} alt="profile_pic" />
+                  <span className="username">Nguyen Ngoc Thai Nguyen</span>
                 </div>
                 <div className="user">
-                  <img src={profile_pic} alt="profile_pic" />
-                  <span className="username">Ngyn Ngyn</span>
+                  <img src={profile_pic4} alt="profile_pic" />
+                  <span className="username">Nguyen Ngoc Minh Chau</span>
+                </div>
+                <div className="user">
+                  <img src={profile_pic5} alt="profile_pic" />
+                  <span className="username">Nguyen Van An</span>
                 </div>
               </div>
               <div className="menu">
