@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Questions.scss';
+import './questions.scss';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import Answers from './Answers/Answers'

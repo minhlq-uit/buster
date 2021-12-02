@@ -1,8 +1,8 @@
 import React from 'react';
-import './Footer.scss';
+import './footer.scss';
 import { Link } from 'react-router-dom';
-import Google from '../../../assets/images/Welcome/get-on-chplay.png';
-import IOS from '../../../assets/images/Welcome/get-on-appstores.png';
+import Google from '../../../assets/images/welcome/get-on-chplay.png';
+import IOS from '../../../assets/images/welcome/get-on-appstores.png';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';

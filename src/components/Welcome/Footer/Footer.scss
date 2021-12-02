@@ -6,7 +6,6 @@
   justify-content: center;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-}
 
   /* Logo & Social Networks */
   .heading {
@@ -14,8 +13,6 @@
     margin-top: 50px;
     display: flex;
     justify-content: space-between;
-  }
-
     .logo {
       width: 360px;
       text-align: left;
@@ -24,29 +21,24 @@
       font-weight: 500;
       border-bottom: 1px solid #5A5A5C;
       font-family: Bebas;
-      
     }
-
     .social-networks {
       width: 360px;
       height: 60px;
       text-align: left;
       border-bottom: 1px solid #5A5A5C;
-    }
-
       .icon {
         color: white;
         size: 80px;
         margin-right: 10px;
       }
-
+    }
+  }
   .footer-link-wrapper {
     width: 1500px;
     display: flex;
     justify-content: space-between;
     margin: 30px 0;
-  }
-
     .footer-link-items {
       display: flex;
       flex-direction: column;
@@ -54,10 +46,9 @@
       text-align: left;
       width: 160px;
       box-sizing: border-box;
-    }
-
-    .footer-link-items:last-child {
-      width: 300px;
+      :last-child {
+        width: 300px;
+      }
     }
 
     .footer-link-items:last-child > a:nth-child(3) {
@@ -83,6 +74,7 @@
       text-decoration: none;
       transition: 0.3s ease-out;
     }
+  }
 
   /* Download section */
 
@@ -104,5 +96,5 @@
       width: 280px;
       margin: 30px;
     }
-
+}
 
