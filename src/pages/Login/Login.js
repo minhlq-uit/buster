@@ -105,7 +105,7 @@ export default function Login() {
                     <label>Email address</label>
                     <input 
                         type="text" 
-                        placeholder="User Name..."
+                        // placeholder="User Name..."
                         onChange={getUserName}
                         onBlur={handleEmail}
                     />
