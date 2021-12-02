@@ -1,0 +1,24 @@
+.slide-item{
+    width: 400px;
+    position: relative;
+    .slide-img{
+        // position: absolute;
+        width: 100%;
+        // top: 10px;
+        // left: 10px;
+    }
+    .slide-info{
+        position: absolute;
+        bottom: 30px;
+        left: 20px;
+        .slide-title{
+            text-transform: uppercase;
+            font-size: 1.5em;
+            font-weight: 500;
+        }
+        .slide-year{
+            font-size: 20px;
+            color: #c7bebe;
+        }
+    }
+}

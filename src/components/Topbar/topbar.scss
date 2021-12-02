@@ -101,6 +101,24 @@
         color: black;
       }
     }
+    .results {
+      display: flex;
+      background-color: #1e1e1e;
+      position: absolute;
+      // padding: 15px;
+      margin-top: 25px;
+      top: 60px;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      line-height: 1.8;
+      max-height: 500px;
+      width: 600px;
+      border-radius: 5px;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      list-style-type: none;
+      cursor: pointer;
+    }
   }
   .right {
     display: flex;
