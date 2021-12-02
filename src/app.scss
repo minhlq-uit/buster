@@ -9,6 +9,10 @@
   border: 0;
   outline: none;
 }
+a {
+  text-decoration: none;
+  color: var(--main-text-color);
+}
 :root {
   --main-text-color: #f5f6f7;
   --secondary-text-color: #a5a09f;
@@ -17,7 +21,6 @@
   background-color: #121212;
   font-family: Poppins;
   font-weight: 400;
-
 
   .main-container {
     width: calc(100% - 100px);
