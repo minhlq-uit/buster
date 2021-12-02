@@ -1,0 +1,33 @@
+.result-container {
+    margin-right: 29px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    max-height: 200px;
+    margin-left: 20px;
+    img {
+      width: 50%;
+    }
+    .container{
+        align-items: center;
+        margin-top: 10px;
+        margin-left: 20px;
+        .listTitle {
+            font-weight: 500;
+        }
+        .details {
+            margin-top: 8px;
+            display: flex;
+            .year {
+              font-size: 15px;
+              color: #707070;
+            }
+          }
+    }
+
+}
+  
+
+  

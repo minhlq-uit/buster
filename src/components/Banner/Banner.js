@@ -30,6 +30,7 @@ export default function Banner() {
         params,
       });
       setBannerList(response.results.slice(0, max_banner_item));
+      console.log(bannerList);
     };
     getMovies();
   }, []);
