@@ -1,0 +1,49 @@
+.intro {
+    position: relative;
+    background-image: linear-gradient(to right,rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url("../../../assets/images/welcome/intro.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .intro-text {
+        padding: 20px 0 0 80px;
+        h1 {
+            color: #1cd4d4;
+            font-size: 100px;
+            font-weight: 400;
+            padding-bottom: 100px;
+            font-family: Bebas;
+        }
+        h3 {
+            color: #fff;
+            font-size: 60px;
+            font-weight: 500;
+            padding-bottom: 10px;
+        }
+        p {
+            color: #fff;
+            font-size: 32px;
+            font-weight: lighter;
+            padding: 20px 0 60px 0;
+        }
+        button {
+            border: none;
+            border-radius: 10px;
+            height: 80px;
+            width: 250px;
+            color: #0d141a;
+            margin-bottom: 150px;
+            font-size: 26px;
+            font-weight: 500;
+            background-color: #1cd4d4;
+            text-align: center;
+            cursor: pointer;
+            font-family: Poppins;
+            transition: 0.3s ease-out;
+        }
+        button:hover {
+            background-color: #0aa1a1;
+            color: rgba(255, 255, 255, 0.9);
+        }
+    }
+} 
