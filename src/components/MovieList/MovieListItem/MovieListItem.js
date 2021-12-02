@@ -1,22 +1,32 @@
 import apiConfig from "../../../api/apiConfig";
 import "./movieListItem.scss";
 import StarSolid from "../../Star/StarSolid";
+import { Link } from 'react-router-dom';
 
 const MovieListItem = (props) => {
-  const { item } = props;
+  // const { item } = props;
+  const { item, category } = props;
+
   const background = apiConfig.w500Image(
     item.backdrop_path ? item.backdrop_path : item.poster_path
   );
-  // const { item, category } = props;
-  // const path =
-  //   category === "movie" ? `/movie/${item.id}/play` : `/tv/${item.id}/play`;
+  const path =
+    category === "movie" ? `/views/movie/${item.id}/play` : `views/tv/${item.id}/play`;
 
   // const pathInfo =
   //   category === "movie" ? `/movie/${item.id}` : `/tv/${item.id}`;
 
   return (
     <div className="MovieListItem">
-      <img src={background} alt="movie-img" />
+      <div className="wrap-img">
+        <img src={background} alt="movie-img" />
+        <Link to={path}>
+          <div className="play-btn-outer">
+              <div className="play-btn">
+              </div>
+          </div>
+        </Link>
+      </div>
       <div className="item-info"></div>
       <div className="title">{item.title || item.name}</div>
       <div className="details">
@@ -29,6 +39,8 @@ const MovieListItem = (props) => {
           - {item.vote_average} <StarSolid />
         </div>
       </div>
+      
+      
     </div>
   );
 };
