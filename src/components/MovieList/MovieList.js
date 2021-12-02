@@ -52,17 +52,24 @@ export default function MovieList(props) {
   useEffect(() => {
     const fetchData = async () => {
       let response = null;
-      const params = {};
+      let params = {};
 
       if (props.type !== "similar") {
         switch (props.category) {
           case category.movie:
-            if (props.type === movieType.trending) {
-              response = await tmdbApi.getTrendingList(props.category, {
-                params,
-              });
+            if (props.type) {
+              if (props.type === movieType.trending) {
+                response = await tmdbApi.getTrendingList(props.category, {
+                  params,
+                });
+              } else {
+                response = await tmdbApi.getMoviesList(props.type, { params });
+              }
             } else {
-              response = await tmdbApi.getMoviesList(props.type, { params });
+              params = {
+                with_genres: props.genre_id,
+              };
+              response = await tmdbApi.discover(category.movie, { params });
             }
             break;
           default:
