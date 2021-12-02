@@ -1,5 +1,5 @@
 import React from 'react';
-import './welcome.scss';
+import './Welcome.scss';
 import { Link } from 'react-router-dom';
 import Questions from '../../components/Welcome/Questions/Questions';
 import Footer from '../../components/Welcome/Footer/Footer';

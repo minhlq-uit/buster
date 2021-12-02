@@ -1,5 +1,5 @@
 import React from 'react';
-import './footer.scss';
+import './Footer.scss';
 import { Link } from 'react-router-dom';
 import Google from '../../../assets/images/welcome/get-on-chplay.png';
 import IOS from '../../../assets/images/welcome/get-on-appstores.png';
