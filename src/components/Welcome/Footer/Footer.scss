@@ -1,0 +1,108 @@
+.footer-container {
+  background-color: #202026;
+  padding: 1rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+  /* Logo & Social Networks */
+  .heading {
+    width: 1500px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+    .logo {
+      width: 360px;
+      text-align: left;
+      color: var(--main-color);
+      font-size: 50px;
+      font-weight: 500;
+      border-bottom: 1px solid #5A5A5C;
+      font-family: Bebas;
+      
+    }
+
+    .social-networks {
+      width: 360px;
+      height: 60px;
+      text-align: left;
+      border-bottom: 1px solid #5A5A5C;
+    }
+
+      .icon {
+        color: white;
+        size: 80px;
+        margin-right: 10px;
+      }
+
+  .footer-link-wrapper {
+    width: 1500px;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+  }
+
+    .footer-link-items {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      width: 160px;
+      box-sizing: border-box;
+    }
+
+    .footer-link-items:last-child {
+      width: 300px;
+    }
+
+    .footer-link-items:last-child > a:nth-child(3) {
+      font-weight: 700;
+    }
+
+    .footer-link-items > h2 {
+      color: #616E7C;
+      margin-bottom: 16px;
+      cursor: default;
+
+    }
+
+    .footer-link-items a {
+      color: white;
+      font-weight: 500;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-link-items a:hover {
+      color: var(--main-color);
+      text-decoration: none;
+      transition: 0.3s ease-out;
+    }
+
+  /* Download section */
+
+  .download {
+    border-top: 1px solid #5A5A5C;
+    width: 1500px;
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 10px 0;
+  }
+
+    .platforms {
+      display: block;
+      text-align: center;
+    }
+
+    .platforms img {
+      width: 280px;
+      margin: 30px;
+    }
+
+
