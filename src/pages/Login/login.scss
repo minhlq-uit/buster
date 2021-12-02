@@ -17,17 +17,17 @@
 
     h1 {
         color: var(--main-color);
-        font-size: 50px;
+        font-size: 72px;
         text-shadow: 1px 2px #000;
-        margin-top: -40px;
-        margin-bottom: 20px;
+        margin-top: -30px;
+        margin-bottom: 10px;
         text-transform: uppercase;
     }
     h2 {
         color: var(--main-text-color);
         text-shadow: 1px 2px #000;
-        font-size: 32px;
-        margin: 20px 0;
+        font-size: 45px;
+        margin: 10px 0;
     }
 
     .mask {
@@ -47,7 +47,7 @@
             justify-content: space-between;
             gap: 10px;
             button {
-                height: 40px;
+                height: 60px;
                 background-color: #f5f6f7;
                 color: #000;
                 border-radius: 6px;
@@ -57,21 +57,23 @@
                 background-size: 30px 30px;
                 background-repeat: no-repeat;
                 background-position: 20px center;
-                width: 220px;
+                width: 380px;
                 padding-left: 30px;
                 font-weight: bold;
+                font-family: Poppins;
+                font-size: 20px;
             }
             .login-fb {
                 background-image: url('../../assets/images/logos/facebook.png');
                 background-size: 30px 30px;
                 background-repeat: no-repeat;
                 background-position: center center;
-                width: 40px;
+                width: 60px;
             }
         }
         .or {
             color: #f5f6f7;
-            font-size: 14px;
+            font-size: 18px;
             margin: 10px 0;
         }
         .login-box {
@@ -79,42 +81,64 @@
                 display: block;
                 text-align: left;
                 margin: 5px 0;
+                font-size: 20px;
             }
             input {
                 display: block;
                 margin: 5px 0;
                 width: 100%;
-                height: 30px;
+                height: 50px;
                 padding: 0 20px;
                 background-color: transparent;
                 border: 1px solid #f5f6f7;
                 color: #f5f6f7;
                 letter-spacing: 1.5px;
+                font-size: 20px;
+                font-family: Poppins;
+                cursor: text;
             }
+
         }
         .forgot {
             text-align: right;
             color: #f5f6f7;
-            font-size: 14px;
+            font-size: 16px;
             margin: 10px 0;
+            cursor: pointer;
         }
         .btn-signin,
         .btn-signup {
             width: 100%;
             background-color: var(--main-color);
-            height: 40px;
+            height: 50px;
             border-radius: 6px;
             font-weight: bold;
+            font-family: Arial;
+            font-size: 20px;
             text-transform: uppercase;
             margin: 10px 0;
-        }
-        :last-child {
-            font-size: 14px;
-            font-weight: bold;
-            span {
-                color: var(--main-color);
+            cursor: pointer;
+            @keyframes pulse {
+                0% {
+                  box-shadow: 0 0 0 0 var(--main-color);
+                }
+              }
+            &:hover,
+            &:focus {
+                animation: pulse 1s;
+                box-shadow: 0 0 0 1em rgba(#fff, 0);
             }
         }
+        :last-child {
+            font-size: 20px;
+            font-weight: bold;
+            cursor: default;
+            span {
+                color: var(--main-color);
+                cursor: pointer;
+            }
+        }
+
     }
     .notice {
         position: absolute;
