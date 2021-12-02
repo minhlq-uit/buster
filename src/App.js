@@ -10,6 +10,7 @@ import News from "./pages/News/News"
 import Series from "./pages/Series/Series"
 import Settings from './pages/Settings/Settings'
 import Login from "./pages/Login/Login"
+import Views from "./pages/Views"
 import "./app.scss";
 
 
@@ -31,6 +32,7 @@ function App() {
             <Route exact path="/News" component={News} />
             <Route exact path="/Series" component={Series} />
             <Route exact path="/Settings" component={Settings} />
+            <Route path="/views/:category/:id" component={Views} />
           </div>
         </Switch>
         <Switch>
