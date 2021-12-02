@@ -6,7 +6,7 @@ import SlideItem from "./SlideItem/SlideItem";
 import { category, movieType, tvType } from "../../api/tmdbApi";
 import Slider from "react-slick";
 import "./SlideList.scss";
-export default function SlideList() {
+export default function SlideList(props) {
   const [list, setList] = useState([]);
   const settings = {
     infinite: true,
@@ -17,34 +17,26 @@ export default function SlideList() {
     autoplay: true,
     autoplaySpeed: 5000,
   };
-  // const settings1 = {
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 500,
-  //   slidesToShow: 3,
-  //   slidesToScroll: 3,
-  // };
   useEffect(() => {
     const getMovies = async () => {
       const params = { page: 1 };
-      const response = await tmdbApi.getMoviesList(movieType.popular, {
+      const response = await tmdbApi.getMoviesList(props.type, {
         params,
       });
-      setList(response.results.slice(0, 6));
+      setList(response.results.slice());
       console.log(list);
     };
     getMovies();
-  }, []);
+  }, [props.type]);
 
   return (
     <div className="slide-list">
       <div className="slide-wrapper">
         <Slider {...settings}>
-        {list &&
-          list.map((item) => (
-              <SlideItem  item={item} category={category.movie} />
-
-          ))}
+          {list &&
+            list.map((item) => (
+              <SlideItem item={item} category={category.movie} />
+            ))}
         </Slider>
       </div>
     </div>

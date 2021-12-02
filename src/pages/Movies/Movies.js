@@ -6,44 +6,41 @@ import "./movies.scss";
 import genre from "../../api/genre";
 
 export default function Movies() {
-  
   return (
     <div className="movies">
       <div className="main-title">Movies For You</div>
-      <SlideList />
+      <SlideList type={movieType.popular} />
       <div className="movieListContainer">
         <MovieList
           category={category.movie}
-          genre_id = {genre[0].id}
+          genre_id={genre[0].id}
           title={genre[0].name}
         />
         <MovieList
           category={category.movie}
-          genre_id = {genre[3].id}
+          genre_id={genre[3].id}
           title={genre[3].name}
         />
         <MovieList
           category={category.movie}
-          genre_id = {genre[6].id}
+          genre_id={genre[6].id}
           title={genre[6].name}
         />
         <MovieList
           category={category.movie}
-          genre_id = {genre[2].id}
+          genre_id={genre[2].id}
           title={genre[2].name}
         />
         <MovieList
           category={category.movie}
-          genre_id = {genre[8].id}
+          genre_id={genre[8].id}
           title={genre[8].name}
-        /><MovieList
+        />
+        <MovieList
           category={category.movie}
-          genre_id = {genre[10].id}
+          genre_id={genre[10].id}
           title={genre[10].name}
         />
-        
-        
-        
       </div>
     </div>
   );
