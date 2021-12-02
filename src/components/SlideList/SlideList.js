@@ -17,20 +17,13 @@ export default function SlideList() {
     autoplay: true,
     autoplaySpeed: 5000,
   };
-  // const settings1 = {
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 500,
-  //   slidesToShow: 3,
-  //   slidesToScroll: 3,
-  // };
   useEffect(() => {
     const getMovies = async () => {
       const params = { page: 1 };
       const response = await tmdbApi.getMoviesList(movieType.popular, {
         params,
       });
-      setList(response.results.slice(0, 6));
+      setList(response.results.slice());
       console.log(list);
     };
     getMovies();
