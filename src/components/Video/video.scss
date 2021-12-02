@@ -1,10 +1,9 @@
 .video {
     position: relative;
-    width: 60%;
+    width: 100%;
     transition-duration: 200ms;
     border-radius: 0.375rem;
     overflow: hidden;
-    padding-bottom: '55%';
 
     iframe {
         position: absolute;

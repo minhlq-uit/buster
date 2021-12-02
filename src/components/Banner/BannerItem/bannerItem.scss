@@ -51,6 +51,9 @@
       max-width: 460px;
     }
 
+    a {
+      text-decoration: none;
+    }
     .buttons {
       display: flex;
       // margin-top: 38px;
@@ -72,6 +75,7 @@
         padding: 10px 25px;
         margin-right: 25px;
         cursor: pointer;
+        transition: all .3s ease-in-out;
         .playIcon {
           font-size: 1.5em;
         }
@@ -80,7 +84,8 @@
         }
         &:hover,
         &:focus {
-          animation: pulse 1s;
+          // animation: pulse 1s;
+          transform: scale(1.2);
           box-shadow: 0 0 0 1em rgba(#fff, 0);
         }
       }

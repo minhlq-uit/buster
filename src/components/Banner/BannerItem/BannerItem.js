@@ -4,6 +4,8 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import AddIcon from "@mui/icons-material/Add";
 import tmdbApi from "../../../api/tmdbApi";
 import apiConfig from "../../../api/apiConfig";
+import { Link } from 'react-router-dom';
+
 
 const BannerItem = ({ item }) => {
   const [genres, setGenres] = useState([]);
@@ -21,6 +23,7 @@ const BannerItem = ({ item }) => {
   const background = apiConfig.originalImage(
     item.backdrop_path ? item.backdrop_path : item.poster_path
   );
+  const path = `/views/movie/${item.id}/play`;
 
   return (
     <div className="bannerContent">
@@ -64,14 +67,17 @@ const BannerItem = ({ item }) => {
             </span>
           </div>
           <div className="buttons">
+            <Link to={path}>
             <button className="watchBtn">
               <PlayArrowIcon className="playIcon" />
               <span>Watch</span>
             </button>
-            <button className="addPlaylistBtn">
+            </Link>
+
+            {/* <button className="addPlaylistBtn">
               <AddIcon />
               <span>My Playlist</span>
-            </button>
+            </button> */}
           </div>
         </div>
       </>
