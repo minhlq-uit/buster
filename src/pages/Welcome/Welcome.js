@@ -1,5 +1,5 @@
 import React from "react";
-import "./welcome.scss";
+import "./Welcome.scss";
 import { Link } from "react-router-dom";
 import Intro from "../../components/Welcome/Intro/Intro";
 import Stream from "../../components/Welcome/Stream/Stream";
