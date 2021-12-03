@@ -19,7 +19,9 @@ const MovieListItem = (props) => {
   //   category === "movie" ? `/movie/${item.id}` : `/tv/${item.id}`;
 
   return (
-    <div className="MovieListItem">
+    <div 
+      className="MovieListItem"
+    >
       <div className="wrap-img">
         <img src={background} alt="movie-img" />
         <Link to={path}>

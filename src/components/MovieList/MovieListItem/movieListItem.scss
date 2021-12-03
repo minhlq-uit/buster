@@ -10,11 +10,12 @@
     overflow: hidden;
     position: relative;
     height: 140.5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 
     img {
       height: 100%;
       overflow: hidden;
-      // max-height: 140.5px;
       max-width: 100%;
       -webkit-transform: scale(1);
       transform: scale(1);
@@ -53,8 +54,8 @@
     }
     &:hover {
       img {
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
       }
       .play-btn-outer {
         display: block;
@@ -81,6 +82,35 @@
       color: #707070;
     }
   }
-  
+  &:after {
+    display: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    // height: 0;
+    right: 0;
+    width: 5px;
+    border-top-right-radius: 5px;
+    background-color: var(--main-color);
+    z-index: 0;
+    transition: .5s;
+    animation: br-out .7s linear;
 
+  }
+  &:hover {
+    &::after {
+      display: block;
+      animation: br-in .5s linear;
+      height: 140px;
+    }
+  }
+
+}
+@keyframes br-in {
+  0% {height: 0px;}
+  100% {height: 140px;}
+}
+@keyframes br-out {
+  from {height: 140px;}
+  to {height: 50px;}
 }
