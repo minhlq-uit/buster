@@ -7,10 +7,10 @@
     display: flex;
     max-height: 200px;
     margin-left: 20px;
-    img {
-      width: 50%;
-    }
+    display: flex;
+    justify-content: space-between;
     .container{
+      flex: 1;
         align-items: center;
         margin-top: 10px;
         margin-left: 20px;
@@ -27,13 +27,14 @@
           }
     }
     .wrap-img {
+      flex: 1;
       overflow: hidden;
       position: relative;
-      .slide-img{
-          max-width: 100%;
-          -webkit-transform: scale(1);
-          transform: scale(1);
-          transition: all .4s ease-in-out;
+      img {
+        width: 100%;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        transition: all .4s ease-in-out;
       }
       .play-btn-outer {
           z-index: 1;
@@ -72,7 +73,7 @@
       .play-btn-outer {
           display: block;
       }
-      .slide-img {
+      img {
           -webkit-transform: scale(1.1);
           transform: scale(1.1);
       }
