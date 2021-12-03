@@ -119,7 +119,7 @@ export default function Topbar() {
               {Object.values(genres).map((genre) => (
                 <Link
                   to={{
-                    pathname: `/Movies/GenreSelected/${genre.name}`,
+                    pathname: `/movies/genreSelected/${genre.name}`,
                     id: `${genre.id}`,
                   }}
                   style={{ textDecoration: "none", color: "white" }}
@@ -162,7 +162,7 @@ export default function Topbar() {
                 value={year}
                 onKeyUp={(e) => {
                   if (e.keyCode === 13) {
-                    history.push(`/Movies/YearSelected/${year}`);
+                    history.push(`/movies/yearSelected/${year}`);
                     setYearSelected(false);
                   }
                 }}
@@ -183,7 +183,7 @@ export default function Topbar() {
           <div className="searchIcon">
             <Link
               to={{
-                pathname: `/Movies/Search/${query}`,
+                pathname: `/movies/search/${query}`,
                 query: `${query}`,
               }}
             >
@@ -241,7 +241,7 @@ export default function Topbar() {
                 <span>Account</span>
                 <span>Help Center</span>
                 {/* <span onClick={routeChange}>Log Out</span> */}
-                <Link to="/Login">
+                <Link to="/login">
                   <span>Log Out</span>
                 </Link>
               </div>

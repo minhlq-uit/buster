@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import "./answers.scss";
+import "./Answers.scss";
 
 function Answers(props) {
     const [readMore, setReadMore] = useState(false);
