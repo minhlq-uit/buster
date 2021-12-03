@@ -48,8 +48,12 @@ export default function Topbar() {
   const closeDropDownSearch = () => {
     setResults(false);
   };
+  const closeDropDownYear = () => {
+    setYearSelected(false);
+  };
   const refGenre = useDetectClickOutside({ onTriggered: closeDropDownGenre });
   const refSearch = useDetectClickOutside({ onTriggered: closeDropDownSearch });
+  const refYear = useDetectClickOutside({ onTriggered: closeDropDownYear });
   const refProfileSelected = useDetectClickOutside({
     onTriggered: closeDropDownProfileSelected,
   });
@@ -139,7 +143,7 @@ export default function Topbar() {
             </div>
           )}
         </div>
-        <div className="boxContainer">
+        <div className="boxContainer" ref={refYear}>
           <div
             className="yearBox"
             onClick={() => {
