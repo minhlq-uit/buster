@@ -22,7 +22,6 @@ export default function YearSelected() {
       const data = await tmdbApi.discover(category.movie, { params });
       setContent(data.results);
       setNumOfPages(data.total_pages);
-      console.log(data);
     };
     fectch();
   }, [year, page]);

@@ -21,7 +21,6 @@ export default function GenreSelected() {
       const data = await tmdbApi.discover(category.movie, { params });
       setContent(data.results);
       setNumOfPages(data.total_pages);
-      console.log(data);
     };
     fectch();
   }, [id, page]);

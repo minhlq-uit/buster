@@ -23,7 +23,6 @@ export default function Search() {
       const data = await tmdbApi.search(category.movie, { params });
       setContent(data.results);
       setNumOfPages(data.total_pages);
-      console.log(data);
     };
     fectch();
   }, [query, page]);
