@@ -27,36 +27,36 @@ function App() {
         <Switch>
           <div className="main-container">
             <Route exact path="/" component={Home} />
-            <Route exact path="/Downloads" component={Downloads} />
-            <Route exact path="/Movies" component={Movies} />
-            <Route exact path="/MyList" component={MyList} />
-            <Route exact path="/News" component={News} />
-            <Route exact path="/Series" component={Series} />
-            <Route exact path="/Settings" component={Settings} />
+            <Route exact path="/downloads" component={Downloads} />
+            <Route exact path="/movies" component={Movies} />
+            <Route exact path="/my_list" component={MyList} />
+            <Route exact path="/news" component={News} />
+            <Route exact path="/series" component={Series} />
+            <Route exact path="/settings" component={Settings} />
 
             <Route path="/views/:category/:id" component={Views} />
 
-            <Route exact path="/Movies/Search/:query" component={Search} />
+            <Route exact path="/movies/search/:query" component={Search} />
 
-            <Route path="/Movies/views/:category/:id" component={Views} />
+            <Route path="/movies/views/:category/:id" component={Views} />
 
             <Route
               exact
-              path="/Movies/YearSelected/:year"
+              path="/movies/yearSelected/:year"
               component={YearSelected}
             />
             <Route
               exact
-              path="/Movies/GenreSelected/:genre"
+              path="/movies/genreSelected/:genre"
               component={GenreSelected}
             />
           </div>
         </Switch>
         <Switch>
-          <Route exact path="/Login" component={Login} />
+          <Route exact path="/login" component={Login} />
         </Switch>
         <Switch>
-          <Route exact path="/Welcome" component={Welcome} />
+          <Route exact path="/welcome" component={Welcome} />
         </Switch>
       </Router>
     </div>

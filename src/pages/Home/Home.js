@@ -4,6 +4,7 @@ import ContinueWatching from "../../components/ContinueWatching/ContinueWatching
 import "./home.scss";
 import { category, movieType, tvType } from "../../api/tmdbApi";
 export default function Home() {
+  document.title = "BUSTER"
   return (
     <div className="home">
       <Banner />

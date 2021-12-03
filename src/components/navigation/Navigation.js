@@ -12,7 +12,7 @@ export default function Navigation() {
   return (
     <div id="nav">
       <div className="nav-item">
-        <div className="logo">REMO</div>
+        <div className="logo">BUSTER</div>
       </div>
       <Link to="/">
         <div
@@ -24,40 +24,40 @@ export default function Navigation() {
           Home
         </div>
       </Link>
-      <Link to="/Series">
+      <Link to="/series">
         <div
           className={
-            location.pathname === "/Series" ? "nav-item--activated" : "nav-item"
+            location.pathname === "/series" ? "nav-item--activated" : "nav-item"
           }
         >
           <SeriesIcon className="icon" />
           Series
         </div>
       </Link>
-      <Link to="/Movies">
+      <Link to="/movies">
         <div
           className={
-            location.pathname === "/Movies" ? "nav-item--activated" : "nav-item"
+            location.pathname === "/movies" ? "nav-item--activated" : "nav-item"
           }
         >
           <MoviesIcon className="icon" />
           Movies
         </div>
       </Link>
-      <Link to="/MyList">
+      <Link to="/my_list">
         <div
           className={
-            location.pathname === "/MyList" ? "nav-item--activated" : "nav-item"
+            location.pathname === "/my_list" ? "nav-item--activated" : "nav-item"
           }
         >
           <MyListIcon className="icon" />
           MyList
         </div>
       </Link>
-      <Link to="/Downloads">
+      <Link to="/downloads">
         <div
           className={
-            location.pathname === "/Downloads"
+            location.pathname === "/downloads"
               ? "nav-item--activated"
               : "nav-item"
           }
@@ -66,10 +66,10 @@ export default function Navigation() {
           Downloads
         </div>
       </Link>
-      <Link to="/News">
+      <Link to="/news">
         <div
           className={
-            location.pathname === "/News" ? "nav-item--activated" : "nav-item"
+            location.pathname === "/news" ? "nav-item--activated" : "nav-item"
           }
         >
 
@@ -77,10 +77,10 @@ export default function Navigation() {
           News
         </div>
       </Link>
-      <Link to="/Settings">
+      <Link to="/settings">
         <div
           className={
-            location.pathname === "/Settings"
+            location.pathname === "/settings"
               ? "nav-item--activated"
               : "nav-item"
           }
