@@ -1,0 +1,21 @@
+.listCard{
+    display: flex;
+    cursor: pointer;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center ;
+    border: 2px black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    .listCard-info{
+        display: flex;
+        align-items: center;
+        img{
+            width: 250px;
+            
+        }
+        .listCard-title{
+            margin-left: 20px;
+        }
+    }
+}

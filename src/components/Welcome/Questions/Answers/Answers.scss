@@ -1,0 +1,44 @@
+.question-box {
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    .question {
+        display: flex;
+        justify-content: space-between;
+        background: #CBD2D9;
+        border: 1px solid transparent;
+        border-radius: 1px;
+        width: 1000px;
+        font-size: 35px;
+        line-height: 95px;
+        font-weight: 500;
+        color: black;
+        cursor: pointer;
+        margin-bottom: 15px;
+        padding: 0 20px;
+        &:hover {
+            opacity: 0.6;
+            transition: 0.3s ease-out;
+        }
+    }
+    .content-parent {
+        height: 0px;
+        overflow: hidden;
+        transition: height ease-out 0.3s;
+        .show {
+            height: auto;
+        }
+        .content {
+            display: block;
+            max-width: 1000px;
+            border: 1px solid #afafaf;
+            margin: 15px 0 25px;
+            font-size: 25px;
+            color: black;
+            text-align: justify;
+            padding: 10px;
+            font-weight: 300;
+        }
+    }
+}
+

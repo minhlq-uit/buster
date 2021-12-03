@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5eca0a11.chunk.css",
+    "main.js": "/static/js/main.c7ecd178.chunk.js",
+    "main.js.map": "/static/js/main.c7ecd178.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.5db9d757.js",
+    "runtime-main.js.map": "/static/js/runtime-main.5db9d757.js.map",
+    "static/css/2.19627560.chunk.css": "/static/css/2.19627560.chunk.css",
+    "static/js/2.01c632c2.chunk.js": "/static/js/2.01c632c2.chunk.js",
+    "static/js/2.01c632c2.chunk.js.map": "/static/js/2.01c632c2.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.19627560.chunk.css.map": "/static/css/2.19627560.chunk.css.map",
+    "static/css/main.5eca0a11.chunk.css.map": "/static/css/main.5eca0a11.chunk.css.map",
+    "static/js/2.01c632c2.chunk.js.LICENSE.txt": "/static/js/2.01c632c2.chunk.js.LICENSE.txt",
+    "static/media/app.scss": "/static/media/BebasNeue-Regular.a92d19b5.otf",
+    "static/media/login.scss": "/static/media/login_bg.10fa415a.jpg",
+    "static/media/get-on-appstores.c3343ce2.png": "/static/media/get-on-appstores.c3343ce2.png",
+    "static/media/get-on-chplay.3b8cd5c8.png": "/static/media/get-on-chplay.3b8cd5c8.png",
+    "static/media/jurassicworld3.fa5542e8.png": "/static/media/jurassicworld3.fa5542e8.png",
+    "static/media/slick-theme.css": "/static/media/slick.c94f7671.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5db9d757.js",
+    "static/css/2.19627560.chunk.css",
+    "static/js/2.01c632c2.chunk.js",
+    "static/css/main.5eca0a11.chunk.css",
+    "static/js/main.c7ecd178.chunk.js"
+  ]
+}

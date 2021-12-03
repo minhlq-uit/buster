@@ -37,7 +37,7 @@ export default function Search() {
         <div className="container">
           {content.map((item, i) => (
             <div className="item">
-              <MovieListItem key={i} item={item} />
+              <MovieListItem key={i} item={item} category="movie" />
             </div>
           ))}
         </div>
