@@ -11,9 +11,9 @@ import Settings from "./pages/Settings/Settings";
 import Search from "./pages/Movies/Search/Search";
 import YearSelected from "./pages/Movies/YearSelected/YearSelected";
 import GenreSelected from "./pages/Movies/GenreSelected/GenreSelected";
-import Login from "./pages/Login/Login";
-import Views from "./pages/Views";
-import Welcome from "./pages/Welcome/Welcome";
+import Login from "./pages/Login/Login"
+import Views from "./pages/Views"
+import Welcome from "./pages/Welcome/Welcome"
 import "./app.scss";
 
 function App() {
