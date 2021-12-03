@@ -2,12 +2,11 @@ import "./topbar.scss";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SearchIcon from "@mui/icons-material/Search";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useHistory } from "react-router-dom";
-import { category, movieType, tvType } from "../../api/tmdbApi";
-import tmdbApi from "../../api/tmdbApi";
 import apiConfig from "../../api/apiConfig";
 import axios from "axios";
+import { useDetectClickOutside } from "react-detect-click-outside";
 // minh
 import { Link } from "react-router-dom";
 import ResultsCards from "../ResultsCards/ResultsCards";
@@ -39,6 +38,21 @@ export default function Topbar() {
   //year
   const history = useHistory();
   const [year, setYear] = useState("All time");
+  //onClickOutSide
+  const closeDropDownGenre = () => {
+    setGenreSelected(false);
+  };
+  const closeDropDownProfileSelected = () => {
+    setProfileSelected(false);
+  };
+  const closeDropDownSearch = () => {
+    setResults(false);
+  };
+  const refGenre = useDetectClickOutside({ onTriggered: closeDropDownGenre });
+  const refSearch = useDetectClickOutside({ onTriggered: closeDropDownSearch });
+  const refProfileSelected = useDetectClickOutside({
+    onTriggered: closeDropDownProfileSelected,
+  });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -63,7 +77,6 @@ export default function Topbar() {
         } else {
           setResults([]);
         }
-        console.log(results);
       });
   }, [query]);
 
@@ -94,7 +107,9 @@ export default function Topbar() {
               setGenreSelected(!genreSelected);
               setYearSelected(false);
               setProfileSelected(false);
+              setResults(false);
             }}
+            ref={refGenre}
           >
             <span> {currGenres}</span>
             <KeyboardArrowDownIcon />
@@ -131,7 +146,9 @@ export default function Topbar() {
               setYearSelected(!yearSelected);
               setGenreSelected(false);
               setProfileSelected(false);
+              setResults(false);
             }}
+            // ref={refYear}
           >
             <span>{year}</span>
             <KeyboardArrowDownIcon />
@@ -156,7 +173,7 @@ export default function Topbar() {
         </div>
       </div>
       <div className="middle">
-        <form>
+        <form ref={refSearch}>
           <input
             type="text"
             placeholder="Search Movies, TV series,..."
@@ -186,13 +203,14 @@ export default function Topbar() {
       </div>
       <div className="right">
         <NotificationsIcon className="icon" />
-        <div className="profile">
+        <div className="profile" ref={refProfileSelected}>
           <div
             className="main-profile"
             onClick={() => {
               setProfileSelected(!profileSelected);
               setGenreSelected(false);
               setYearSelected(false);
+              setResults(false);
             }}
           >
             <img src={profile_pic1} alt="profile_pic" />

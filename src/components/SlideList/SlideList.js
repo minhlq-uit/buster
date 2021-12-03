@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import tmdbApi from "../../api/tmdbApi";
-import LeftArrow from "../MovieList/Arrow/LeftArrow";
-import RightArrow from "../MovieList/Arrow/RightArrow";
 import SlideItem from "./SlideItem/SlideItem";
-import { category, movieType, tvType } from "../../api/tmdbApi";
+import { category } from "../../api/tmdbApi";
 import Slider from "react-slick";
 import "./SlideList.scss";
 export default function SlideList(props) {
@@ -24,7 +22,6 @@ export default function SlideList(props) {
         params,
       });
       setList(response.results.slice());
-      console.log(list);
     };
     getMovies();
   }, [props.type]);
@@ -34,8 +31,8 @@ export default function SlideList(props) {
       <div className="slide-wrapper">
         <Slider {...settings}>
           {list &&
-            list.map((item) => (
-              <SlideItem item={item} category={category.movie} />
+            list.map((item, i) => (
+              <SlideItem key={i} item={item} category={category.movie} />
             ))}
         </Slider>
       </div>
