@@ -3,6 +3,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    height: 150vh;
     &::after {
         content: "";
         position: absolute;
@@ -31,15 +32,27 @@
         }
     }
     .views-bot {
+        background: transparent;
+        position: absolute;
+        left: 0;
+        right: 0;
         padding: 10px;
-        z-index: 10;
+        z-index: 1;
         .bot-more-title {
             display: flex;
             gap: 30px;
-            color: white;
-            // justify-content: space-between;
             .active {
                 border-bottom: 1px solid var(--main-color);
+            }
+            h4 {
+                font-size: 28px;
+                color: white;
+                // z-index: 1;
+            }
+        }
+        .bot-more-content {
+            .more-content-1 {
+                // z-index: 1000;
             }
         }
     }
