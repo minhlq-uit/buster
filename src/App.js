@@ -23,6 +23,7 @@ import Views from "./pages/Views";
 import Welcome from "./pages/Welcome/Welcome";
 import ArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import "./app.scss";
+import Account from "./pages/Account/Account";
 
 function App() {
   const [showNav, setShowNav] = useState(true);
@@ -61,6 +62,7 @@ function App() {
             <Route exact path="/news" component={News} />
             <Route exact path="/series" component={Series} />
             <Route exact path="/settings" component={Settings} />
+            <Route exact path="/account" component={Account} />
 
             <PrivateRoute path="/views/:category/:id" component={Views} />
 

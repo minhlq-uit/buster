@@ -107,7 +107,7 @@ export default function Topbar(props) {
   // }, [query]);
 
   return (
-    <div id="top-bar" className={`${props.show ? '' : 'full'}`}>
+    <div id="top-bar" className={`${props.show ? "" : "full"}`}>
       <div className="left">
         {!props.show && <h1>BUSTER</h1>}
         <div className="boxContainer">
@@ -248,7 +248,19 @@ export default function Topbar(props) {
                 </div>
               </div>
               <div className="menu">
-                <span>Account</span>
+                <Link
+                  to={{
+                    pathname: `/account`,
+                  }}
+                >
+                  <span
+                    onClick={() => {
+                      setProfileSelected(false);
+                    }}
+                  >
+                    Account
+                  </span>
+                </Link>
                 <span>Help Center</span>
                 {/* <span onClick={routeChange}>Log Out</span> */}
                 <div onClick={logoutHandler}>
