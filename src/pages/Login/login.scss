@@ -1,187 +1,149 @@
 #login {
-    z-index: 10000;
-    background-color: rgb(48, 48, 48);
-    height: 500px;
-    width: 100%;
-    position: fixed;
+  z-index: 10000;
+  background-color: rgb(48, 48, 48);
+  height: 500px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../assets/images/login_bg.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  h1 {
+    color: var(--main-color);
+    font-size: 72px;
+    text-shadow: 1px 2px #000;
+    margin-top: -30px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  h2 {
+    color: var(--main-text-color);
+    text-shadow: 1px 2px #000;
+    font-size: 45px;
+    margin: 10px 0;
+  }
+
+  .mask {
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url('../../assets/images/login_bg.jpg');
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-
-    h1 {
-        color: var(--main-color);
-        font-size: 72px;
-        text-shadow: 1px 2px #000;
-        margin-top: -30px;
-        margin-bottom: 10px;
-        text-transform: uppercase;
-    }
-    h2 {
-        color: var(--main-text-color);
-        text-shadow: 1px 2px #000;
-        font-size: 45px;
-        margin: 10px 0;
-    }
-
-    .mask {
-        position: absolute;
-        top: 0;
-        left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(77, 77, 77, 0.5), rgba(0, 0, 0, 1));
+  }
+  .container {
+    text-align: center;
+    z-index: 1;
+    .login-box {
+      label {
+        display: block;
+        text-align: left;
+        margin: 5px 0;
+        font-size: 20px;
+      }
+      input {
+        display: block;
+        margin: 5px 0;
         width: 100%;
-        height: 100%;
-        background: linear-gradient(rgba(77, 77, 77, 0.5), rgba(0, 0, 0, 1));
+        height: 50px;
+        padding: 0 20px;
+        background-color: transparent;
+        border: 1px solid #f5f6f7;
+        color: #f5f6f7;
+        letter-spacing: 1.5px;
+        font-size: 20px;
+        font-family: Poppins;
+        cursor: text;
+      }
     }
-    .container {
-        text-align: center;
-        z-index: 1;
+    .forgot {
+      text-align: right;
+      color: #f5f6f7;
+      font-size: 16px;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+    .btn-signin,
+    .btn-signup {
+      width: 100%;
+      background-color: var(--main-color);
+      height: 50px;
+      border-radius: 6px;
+      font-weight: bold;
+      font-family: Arial;
+      font-size: 20px;
+      text-transform: uppercase;
+      margin: 10px 0;
+      cursor: pointer;
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 var(--main-color);
+        }
+      }
+      &:hover,
+      &:focus {
+        animation: pulse 1s;
+        box-shadow: 0 0 0 1em rgba(#fff, 0);
+      }
+    }
+    :last-child {
+      font-size: 20px;
+      cursor: default;
+      a {
+        color: var(--main-color);
+        cursor: pointer;
+      }
+    }
+  }
+  .notice {
+    position: absolute;
+    right: 20px;
+    background-color: #fff;
+    color: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 10px 30px;
+    border-left: 5px solid red;
+    transition: top 0.8s ease;
+    .incorrect-detail {
+      // color: #000;
 
-        .login-social {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
-            button {
-                height: 60px;
-                background-color: #f5f6f7;
-                color: #000;
-                border-radius: 6px;
-            }
-            .login-gg {
-                background-image: url('../../assets/images/logos/google.png');
-                background-size: 30px 30px;
-                background-repeat: no-repeat;
-                background-position: 20px center;
-                width: 380px;
-                padding-left: 30px;
-                font-weight: bold;
-                font-family: Poppins;
-                font-size: 20px;
-            }
-            .login-fb {
-                background-image: url('../../assets/images/logos/facebook.png');
-                background-size: 30px 30px;
-                background-repeat: no-repeat;
-                background-position: center center;
-                width: 60px;
-            }
-        }
-        .or {
-            color: #f5f6f7;
-            font-size: 18px;
-            margin: 10px 0;
-        }
-        .login-box {
-            label {
-                display: block;
-                text-align: left;
-                margin: 5px 0;
-                font-size: 20px;
-            }
-            input {
-                display: block;
-                margin: 5px 0;
-                width: 100%;
-                height: 50px;
-                padding: 0 20px;
-                background-color: transparent;
-                border: 1px solid #f5f6f7;
-                color: #f5f6f7;
-                letter-spacing: 1.5px;
-                font-size: 20px;
-                font-family: Poppins;
-                cursor: text;
-            }
-
-        }
-        .forgot {
-            text-align: right;
-            color: #f5f6f7;
-            font-size: 16px;
-            margin: 10px 0;
-            cursor: pointer;
-        }
-        .btn-signin,
-        .btn-signup {
-            width: 100%;
-            background-color: var(--main-color);
-            height: 50px;
-            border-radius: 6px;
-            font-weight: bold;
-            font-family: Arial;
-            font-size: 20px;
-            text-transform: uppercase;
-            margin: 10px 0;
-            cursor: pointer;
-            @keyframes pulse {
-                0% {
-                  box-shadow: 0 0 0 0 var(--main-color);
-                }
-              }
-            &:hover,
-            &:focus {
-                animation: pulse 1s;
-                box-shadow: 0 0 0 1em rgba(#fff, 0);
-            }
-        }
-        :last-child {
-            font-size: 20px;
-            font-weight: bold;
-            cursor: default;
-            span {
-                color: var(--main-color);
-                cursor: pointer;
-            }
-        }
-
+      p {
+        color: #ccc;
+      }
     }
-    .notice {
-        position: absolute;
-        right: 20px;
-        background-color: #fff;
-        color: red;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 80px;
-        padding: 10px 30px;
-        border-left: 5px solid red;
-        transition: top 0.8s ease;
-        .incorrect-detail {
-            // color: #000;
-
-            p {
-                color: #ccc;
-            }
-        }
-    }
-    .notice.account {
-        width: 400px;
-    }
-    .notice.email{
-        width: 250px;
-        border-left: 5px solid rgb(248, 248, 21);
-        color: rgb(248, 248, 21);
-    }
-    .notice.password {
-        width: 450px;
-        border-left: 5px solid rgb(248, 248, 21);
-        color: rgb(248, 248, 21);
-    }
-    .notice.confirm-password {
-        width: 350px;
-        border-left: 5px solid rgb(248, 248, 21);
-        color: rgb(248, 248, 21);
-    }
-    .notice.display {
-        top: 20px;
-    }
-    .notice.hidden {
-        top: -100px;
-    }
-}   
+  }
+  .notice.account {
+    width: 400px;
+  }
+  .notice.email {
+    width: 250px;
+    border-left: 5px solid rgb(248, 248, 21);
+    color: rgb(248, 248, 21);
+  }
+  .notice.password {
+    width: 450px;
+    border-left: 5px solid rgb(248, 248, 21);
+    color: rgb(248, 248, 21);
+  }
+  .notice.confirm-password {
+    width: 350px;
+    border-left: 5px solid rgb(248, 248, 21);
+    color: rgb(248, 248, 21);
+  }
+  .notice.display {
+    top: 20px;
+  }
+  .notice.hidden {
+    top: -100px;
+  }
+}

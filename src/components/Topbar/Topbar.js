@@ -69,6 +69,11 @@ export default function Topbar() {
     };
     fetchData();
   }, [fetchURL]);
+
+  const logoutHandler = () => {
+    localStorage.removeItem("authToken");
+    history.push("/login");
+  };
   useEffect(() => {
     fetch(
       `
@@ -245,9 +250,9 @@ export default function Topbar() {
                 <span>Account</span>
                 <span>Help Center</span>
                 {/* <span onClick={routeChange}>Log Out</span> */}
-                <Link to="/login">
+                <div onClick={logoutHandler}>
                   <span>Log Out</span>
-                </Link>
+                </div>
               </div>
             </div>
           )}
