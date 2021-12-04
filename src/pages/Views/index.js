@@ -3,10 +3,10 @@ import { useParams } from "react-router";
 import apiConfig from "../../api/apiConfig";
 import tmdbApi from "../../api/tmdbApi";
 import { embedMovie, embedEpisode } from "../../api/embed";
-import Iframe from "../../components/MovieDetails/Iframe";
 import Video from "../../components/Video";
 import Overview from "../../components/Overview";
 import MovieList from "../../components/MovieList/MovieList";
+import Cast from "../../components/Cast"
 import "./view.scss";
 
 function Views() {
@@ -16,9 +16,10 @@ function Views() {
   const [src, setSrc] = useState("");
   const [seasons, setSeasons] = useState([]);
   const [overview, setOverview] = useState({});
-  const [title, setTitle] = useState([]);
   const [movieDetails, setMovieDetails] = useState({});
+  const [title, setTitle] = useState([]);
 
+  const [titleIndex, setTitleIndex] = useState(0);
   const fetchMovie = async () => {
     const params = {};
     const response = await tmdbApi.detail(category, id, { params });
@@ -27,10 +28,10 @@ function Views() {
       setOverview(response);
     } else {
       setOverview(response);
-      const responseList = await tmdbApi.getTrendingList(category, {
-        params,
-      });
-      setSeasons(responseList.results);
+      // const responseList = await tmdbApi.getTrendingList(category, {
+      //   params,
+      // });
+      // setSeasons(responseList.results);
     }
     const backgroundTemp = response.backdrop_path
       ? response.backdrop_path
@@ -58,12 +59,12 @@ function Views() {
     // handleScrollToTop();
   };
   const fetchDetails = async () => {
-    // const params = {};
-    // const response = await tmdbApi.detail(category, id, { params });
-    // setMovieDetails(response);
+    const params = {};
+    const response = await tmdbApi.detail(category, id, { params });
+    setMovieDetails(response);
 
-    const responseVideos = await tmdbApi.getVideos(category, id);
-    setVideos(responseVideos.results);
+    // const responseVideos = await tmdbApi.getVideos(category, id);
+    // setVideos(responseVideos.results);
 
     // const title = response.title ? response.title : response.name;
     // document.title = `${title} - Ax Nguyen`;
@@ -74,8 +75,29 @@ function Views() {
     fetchMovie();
     handleUrl();
     fetchDetails();
+    
   }, [id]);
 
+  const titles = document.querySelectorAll('.more-title')
+  titles.forEach((title, i) => {
+    if(i !== titleIndex) {
+      title.classList.remove("active")
+    }
+    title.onclick = () => {
+      setTitleIndex(i)
+      title.classList.add("active")
+    }
+  }) 
+  const contents = document.querySelectorAll('.more-content')
+  contents.forEach((content, i) => {
+    if(i !== titleIndex) {
+      content.classList.remove("active")
+    }
+    if(i === titleIndex) {
+      content.classList.add("active")
+    }
+  }) 
+  
   return (
     <div
       className="views"
@@ -85,7 +107,7 @@ function Views() {
     >
       <div className="views-top">
         <div className="views-top-left">
-          <Overview title={title} overview={overview} />
+          <Overview title={title} overview={overview} all={false} />
         </div>
         <div className="views-top-right">
           <Video src={src} />
@@ -93,21 +115,28 @@ function Views() {
       </div>
       <div className="views-bot">
         <ul className="bot-more-title">
-          <h4 className="more-title-1 active">SIMILAR</h4>
-          {/* <h4 className="more-title-2">DETAILS</h4> */}
+          <h4 className="more-title active">SIMILAR</h4>
+          <h4 className="more-title ">DETAILS</h4>
         </ul>
         <div className="bot-more-content">
-          <div className="more-content-1">
+          <div className="more-content active">
             <MovieList
               category={category}
               type="similar"
-              // title="Similar"
+              title=""
               id={id}
             />
           </div>
-          {/* <div className="more-content-2">
-                        ...
-                    </div> */}
+          <ul className="more-content ">
+            <Overview title="" overview={overview} all={true} />
+            <Cast />
+          </ul>
+        </div>
+        <div className="more-trending">
+          {category === 'movie' ? 
+          <MovieList category={category} type={'trending'} title={"Trending Movies"} fire={true}/>
+          : <MovieList category={category} type={'trending'} title={"Trending TV"}  fire={true}/>
+          }
         </div>
       </div>
     </div>

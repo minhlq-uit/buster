@@ -1,3 +1,4 @@
+import {useState, useEffect} from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navigation from "./components/Navigation/Navigation";
 import Topbar from "./components/Topbar/Topbar";
@@ -14,18 +15,31 @@ import GenreSelected from "./pages/Movies/GenreSelected/GenreSelected";
 import Login from "./pages/Login/Login"
 import Views from "./pages/Views"
 import Welcome from "./pages/Welcome/Welcome"
+import ArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import "./app.scss";
 
 function App() {
+  const [showNav, setShowNav] = useState(true)
+  useEffect(() => {
+    setTimeout(() => {
+      setShowNav(false)
+    }, 15000)
+  }, [showNav])
   return (
     <div className="App">
       <Router>
         <div>
-          <Navigation />
-          <Topbar />
+          <Navigation show={showNav}/>
+          <button 
+            className="open-nav"
+            onClick={() => setShowNav(true)}
+          >
+            <ArrowRight/>
+          </button>
+          <Topbar show={showNav}/>
         </div>
         <Switch>
-          <div className="main-container">
+          <div className={`main-container ${showNav ? '': 'full'}`}>
             <Route exact path="/" component={Home} />
             <Route exact path="/downloads" component={Downloads} />
             <Route exact path="/movies" component={Movies} />
@@ -38,16 +52,16 @@ function App() {
 
             <Route exact path="/movies/search/:query" component={Search} />
 
-            <Route path="/movies/views/:category/:id" component={Views} />
+            {/* <Route path="/movies/views/:category/:id" component={Views} /> */}
 
             <Route
               exact
-              path="/movies/yearSelected/:year"
+              path="/movies/year_selected/:year"
               component={YearSelected}
             />
             <Route
               exact
-              path="/movies/genreSelected/:genre"
+              path="/movies/genre_selected/:genre"
               component={GenreSelected}
             />
           </div>

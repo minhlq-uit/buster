@@ -15,5 +15,38 @@
     }
     p {
         margin-bottom: 10px;
+        // &.small {
+        //     overflow: hidden;
+        //     white-space: nowrap;
+        //     text-overflow: ellipsis;
+        //     max-width: 450px;
+        // }
+    }
+    .overview-genres {
+        display: flex;
+        margin: 10px 0;
+        padding-top: 10px;
+        padding-bottom: 10px;     
+        flex-wrap: wrap;
+        span {
+            font-size: 14px;
+            padding: 6px 10px;
+            margin: 0 10px 10px 0;
+            border-radius: 10px;
+            border: 2px solid rgba(209, 213, 219, 1);
+            cursor: pointer;
+            &:hover {
+                color: var(--main-color);
+                border-color: white;
+            }
+        }
+    }
+    .rate {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        span {
+            margin-left: 10px;
+        }
     }
 }

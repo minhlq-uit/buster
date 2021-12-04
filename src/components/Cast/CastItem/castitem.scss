@@ -1,0 +1,95 @@
+.cast-container {
+    position: relative;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 10px;
+    overflow: hidden;
+
+
+    .cast-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 40%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            transform: scale(1);
+        }
+        .cast-info {
+           color: rgba(209, 213, 219, 1);
+           height: 100%;
+           padding: 5px;
+           div {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+            h3 {
+                font-size: 20px;
+                line-height: 28px;
+            }
+            h4 {
+                color: var(--main-color);
+                font-size: 16px;
+                line-height:20px;
+            }
+           }
+        }
+    }
+    .mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+    }
+    &:after {
+        content: "";
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        // height: 100%;
+        width: 6px;
+        background-color: var(--main-color);
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        animation: bl-in .5s ease;
+        transition: .5s ease;
+    }
+    &:hover {
+        &:after {
+            display: block;
+        }
+        img {
+            transform: scale(1.05);
+        }
+    }
+}
+@keyframes bl-in {
+    0% {
+        height: 0%;
+    }
+    100% {
+        height: 100%;
+    }
+}

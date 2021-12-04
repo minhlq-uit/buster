@@ -1,4 +1,7 @@
 #top-bar {
+  &.full {
+    width: 100%;
+  }
   z-index: 999;
   background-color: #161616;
   position: fixed;
@@ -12,6 +15,9 @@
   .icon {
     font-size: 30px;
     color: white;
+  }
+  h1 {
+    color: var(--main-color);
   }
   .left {
     display: flex;

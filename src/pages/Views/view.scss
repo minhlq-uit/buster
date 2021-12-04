@@ -3,7 +3,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 150vh;
+    height: 200vh;
     &::after {
         content: "";
         position: absolute;
@@ -41,18 +41,29 @@
         .bot-more-title {
             display: flex;
             gap: 30px;
-            .active {
-                border-bottom: 1px solid var(--main-color);
+            
             }
             h4 {
                 font-size: 28px;
                 color: white;
-                // z-index: 1;
+                &.active {
+                    border-bottom: 1px solid var(--main-color);
             }
         }
         .bot-more-content {
-            .more-content-1 {
-                // z-index: 1000;
+            .more-content {
+                display: none;
+                &.active {
+                    display: block;
+                }
+            }
+        }
+    }
+    .more-trending {
+        margin-top: 100px;
+        div {
+            span {
+                font-size: 28px;
             }
         }
     }

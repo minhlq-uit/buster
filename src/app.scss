@@ -22,9 +22,28 @@ a {
   background-color: #121212;
   font-family: Poppins;
   font-weight: 400;
+  position: relative;
 
+  .open-nav {
+    position: fixed;
+    left: 0px;
+    top: 50vh;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px 2px;
+    border-radius: 2px;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+      color: var(--main-color);
+    }
+    // color: white;
+  }
   .main-container {
     width: calc(100% - 100px);
     transform: translateX(100px) translateY(99px);
+    &.full {
+      width: 100%;
+      transform: translateX(0) translateY(99px);
+    }
   }
 }

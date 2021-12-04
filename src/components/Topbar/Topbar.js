@@ -11,7 +11,7 @@ import { useDetectClickOutside } from "react-detect-click-outside";
 import { Link } from "react-router-dom";
 import ResultsCards from "../ResultsCards/ResultsCards";
 
-export default function Topbar() {
+export default function Topbar(props) {
   const profile_pic1 =
     "https://i.pinimg.com/564x/a7/76/7b/a7767ba20aee0ac50cfa3046dc913946.jpg";
   const profile_pic2 =
@@ -98,8 +98,9 @@ export default function Topbar() {
   // }, [query]);
 
   return (
-    <div id="top-bar">
+    <div id="top-bar" className={`${props.show ? '' : 'full'}`}>
       <div className="left">
+        {!props.show && <h1>BUSTER</h1>}
         <div className="boxContainer">
           <div
             className="genreBox"
@@ -119,7 +120,7 @@ export default function Topbar() {
               {Object.values(genres).map((genre) => (
                 <Link
                   to={{
-                    pathname: `/movies/genreSelected/${genre.name}`,
+                    pathname: `/movies/genre_selected/${genre.name}`,
                     id: `${genre.id}`,
                   }}
                   style={{ textDecoration: "none", color: "white" }}
@@ -162,7 +163,7 @@ export default function Topbar() {
                 value={year}
                 onKeyUp={(e) => {
                   if (e.keyCode === 13) {
-                    history.push(`/movies/yearSelected/${year}`);
+                    history.push(`/movies/year_selected/${year}`);
                     setYearSelected(false);
                   }
                 }}
