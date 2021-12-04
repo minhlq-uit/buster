@@ -7,10 +7,10 @@ import DownloadsIcon from "@mui/icons-material/Download";
 import NewsIcon from "@mui/icons-material/Forum";
 import SettingsIcon from "@mui/icons-material/Settings";
 import "./navigation.scss";
-export default function Navigation() {
+export default function Navigation(props) {
   const location = useLocation();
   return (
-    <div id="nav">
+    <div id="nav" className={props.show ? 'active' : ''}>
       <div className="nav-item">
         <div className="logo">REMO</div>
       </div>
