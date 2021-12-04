@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import tmdbApi, { category, movieType, tvType } from "../../api/tmdbApi";
+import IconFire from '@mui/icons-material/LocalFireDepartment';
 
 export default function MovieList(props) {
   const [list, setList] = useState([]);
@@ -89,9 +90,10 @@ export default function MovieList(props) {
     };
     fetchData();
   }, [props.id, props.category, props.type]);
+
   return (
     <div className="list">
-      <span className="listTitle">{props.title}</span>
+      <span className="listTitle">{props.title}{props.fire && <IconFire/>}</span>
       <div className="wrapper">
         <Slider {...settings}>
           {list &&

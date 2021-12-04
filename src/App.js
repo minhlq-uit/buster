@@ -1,3 +1,4 @@
+import {useState, useEffect} from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PrivateRoute from "./components/routing/PrivateRoute";
 import Login from "./pages/Login/Login";
@@ -17,11 +18,19 @@ import Settings from "./pages/Settings/Settings";
 import Search from "./pages/Movies/Search/Search";
 import YearSelected from "./pages/Movies/YearSelected/YearSelected";
 import GenreSelected from "./pages/Movies/GenreSelected/GenreSelected";
-import Views from "./pages/Views";
-import Welcome from "./pages/Welcome/Welcome";
+import Login from "./pages/Login/Login"
+import Views from "./pages/Views"
+import Welcome from "./pages/Welcome/Welcome"
+import ArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import "./app.scss";
 
 function App() {
+  const [showNav, setShowNav] = useState(true)
+  useEffect(() => {
+    setTimeout(() => {
+      setShowNav(false)
+    }, 15000)
+  }, [showNav])
   return (
     <div className="App">
       <Router>
@@ -37,18 +46,24 @@ function App() {
           />
         </Switch>
         <div>
-          <Navigation />
-          <Topbar />
+          <Navigation show={showNav}/>
+          <button 
+            className="open-nav"
+            onClick={() => setShowNav(true)}
+          >
+            <ArrowRight/>
+          </button>
+          <Topbar show={showNav}/>
         </div>
         <Switch>
-          <div className="main-container">
-            <PrivateRoute exact path="/" component={Home} />
-            <PrivateRoute exact path="/downloads" component={Downloads} />
-            <PrivateRoute exact path="/movies" component={Movies} />
-            <PrivateRoute exact path="/my_list" component={MyList} />
-            <PrivateRoute exact path="/news" component={News} />
-            <PrivateRoute exact path="/series" component={Series} />
-            <PrivateRoute exact path="/settings" component={Settings} />
+          <div className={`main-container ${showNav ? '': 'full'}`}>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/downloads" component={Downloads} />
+            <Route exact path="/movies" component={Movies} />
+            <Route exact path="/my_list" component={MyList} />
+            <Route exact path="/news" component={News} />
+            <Route exact path="/series" component={Series} />
+            <Route exact path="/settings" component={Settings} />
 
             <PrivateRoute path="/views/:category/:id" component={Views} />
 
@@ -58,19 +73,16 @@ function App() {
               component={Search}
             />
 
-            <PrivateRoute
-              path="/movies/views/:category/:id"
-              component={Views}
-            />
+            {/* <Route path="/movies/views/:category/:id" component={Views} /> */}
 
             <PrivateRoute
               exact
-              path="/movies/yearSelected/:year"
+              path="/movies/year_selected/:year"
               component={YearSelected}
             />
             <PrivateRoute
               exact
-              path="/movies/genreSelected/:genre"
+              path="/movies/genre_selected/:genre"
               component={GenreSelected}
             />
           </div>

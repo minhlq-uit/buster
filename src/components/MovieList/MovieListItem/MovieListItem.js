@@ -1,20 +1,21 @@
 import apiConfig from "../../../api/apiConfig";
-import "./movieListItem.scss";
-import StarSolid from "../../Star/StarSolid";
 import { Link } from "react-router-dom";
+import StarSolid from "../../Star/StarSolid";
+import "./movieListItem.scss";
 
 const MovieListItem = (props) => {
   // const { item } = props;
   const { item, category } = props;
-
   const background = apiConfig.w500Image(
     item.backdrop_path ? item.backdrop_path : item.poster_path
   );
-  const path =
-    category === "movie"
-      ? `/views/movie/${item.id}/play`
-      : `views/tv/${item.id}/play`;
-
+  let path = ''
+  // const path = category === "tv" ? `/views/tv/${item.id}/play` : `views/movie/${item.id}/play`;
+  if(category === "tv") {
+    path =  `/views/tv/${item.id}/play`
+  } else {
+    path =  `/views/movie/${item.id}/play`
+  }
   // const pathInfo =
   //   category === "movie" ? `/movie/${item.id}` : `/tv/${item.id}`;
 
