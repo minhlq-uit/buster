@@ -63,6 +63,7 @@
                     }
                     .change-email{
                         color: #337EF7;
+                        cursor: pointer;
                     }
                 }
                 .password{
@@ -71,6 +72,7 @@
                     
                     .change-password{
                         color: #337EF7;
+                        cursor: pointer;
                     }
                 }
                 .phone{
@@ -79,6 +81,7 @@
                     
                     .change-phone{
                         color: #337EF7;
+                        cursor: pointer;
                     }
                 }
                 .date{
@@ -91,6 +94,7 @@
                     }
                     .payment{
                         color: #337EF7;
+                        cursor: pointer;
                     }
                 }
                 .bank{
@@ -98,6 +102,7 @@
                     justify-content: space-between;
                     .detail{
                         color: #337EF7;
+                        cursor: pointer;
                     }
                 }
             }
@@ -122,6 +127,7 @@
             width: 60%;
             margin-left: 75px;
             color: #337EF7;
+            cursor: pointer;
         }
     }
     .user{
@@ -147,6 +153,7 @@
                 border-radius: 50%;
                 object-fit: cover;
                 margin-right: 20px;
+                cursor: pointer;
             }
         }
     }
