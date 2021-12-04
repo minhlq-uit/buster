@@ -41,6 +41,7 @@
   .container {
     text-align: center;
     z-index: 1;
+    width: 440px;
     .login-box {
       label {
         display: block;
@@ -50,7 +51,7 @@
       }
       input {
         display: block;
-        margin: 5px 0;
+        margin: 10px 0;
         width: 100%;
         height: 50px;
         padding: 0 20px;
@@ -61,14 +62,29 @@
         font-size: 20px;
         font-family: Poppins;
         cursor: text;
+        border-radius: 2px;
+        &::placeholder {
+          font-size: 14px;
+          letter-spacing: 1px;
+        }
+        &:focus {
+          outline:none;
+          border-color:#9ecaed;
+          box-shadow:0 0 10px #9ecaed;
+          transition: box-shadow ease-out .2s;
+        }
       }
     }
     .forgot {
-      text-align: right;
+      display: flex;
+      text-align: left;
       color: #f5f6f7;
       font-size: 16px;
       margin: 10px 0;
       cursor: pointer;
+      &:hover {
+        color: rgba(255, 255, 255, 0.664);
+      }
     }
     .btn-signin,
     .btn-signup {
@@ -99,6 +115,10 @@
       a {
         color: var(--main-color);
         cursor: pointer;
+        &:hover {
+          font-weight: 600;
+          transition: ease-in .3s;
+        }
       }
     }
   }
@@ -113,12 +133,14 @@
     height: 80px;
     padding: 10px 30px;
     border-left: 5px solid red;
+    border-radius: 2px;
+    box-shadow: 0 10px 12px rgb(0 0 0 / 25%);
     transition: top 0.8s ease;
     .incorrect-detail {
       // color: #000;
 
       p {
-        color: #ccc;
+        color: rgb(155, 154, 154);
       }
     }
   }
@@ -127,18 +149,18 @@
   }
   .notice.email {
     width: 250px;
-    border-left: 5px solid rgb(248, 248, 21);
-    color: rgb(248, 248, 21);
+    border-left: 5px solid rgb(221, 207, 14);
+    color: rgb(221, 207, 14);
   }
   .notice.password {
     width: 450px;
-    border-left: 5px solid rgb(248, 248, 21);
-    color: rgb(248, 248, 21);
+    border-left: 5px solid rgb(221, 207, 14);
+    color: rgb(221, 207, 14);
   }
   .notice.confirm-password {
     width: 350px;
-    border-left: 5px solid rgb(248, 248, 21);
-    color: rgb(248, 248, 21);
+    border-left: 5px solid rgb(221, 207, 14);
+    color: rgb(221, 207, 14);
   }
   .notice.display {
     top: 20px;
