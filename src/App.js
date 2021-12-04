@@ -1,5 +1,11 @@
 import {useState, useEffect} from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import PrivateRoute from "./components/routing/PrivateRoute";
+import Login from "./pages/Login/Login";
+import Register from "./pages/Login/Register";
+import ResetPassword from "./pages/Login/ResetPassword";
+import ForgotPassword from "./pages/Login/ForgotPassword";
+
 import Navigation from "./components/Navigation/Navigation";
 import Topbar from "./components/Topbar/Topbar";
 import Home from "./pages/Home/Home";
@@ -28,6 +34,17 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <Switch>
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/welcome" component={Welcome} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/forgotPassword" component={ForgotPassword} />
+          <Route
+            exact
+            path="/passwordreset/:resetToken"
+            component={ResetPassword}
+          />
+        </Switch>
         <div>
           <Navigation show={showNav}/>
           <button 
@@ -48,30 +65,29 @@ function App() {
             <Route exact path="/series" component={Series} />
             <Route exact path="/settings" component={Settings} />
 
-            <Route path="/views/:category/:id" component={Views} />
+            <PrivateRoute path="/views/:category/:id" component={Views} />
 
-            <Route exact path="/movies/search/:query" component={Search} />
+            <PrivateRoute
+              exact
+              path="/movies/search/:query"
+              component={Search}
+            />
 
             {/* <Route path="/movies/views/:category/:id" component={Views} /> */}
 
-            <Route
+            <PrivateRoute
               exact
               path="/movies/year_selected/:year"
               component={YearSelected}
             />
-            <Route
+            <PrivateRoute
               exact
               path="/movies/genre_selected/:genre"
               component={GenreSelected}
             />
           </div>
         </Switch>
-        <Switch>
-          <Route exact path="/login" component={Login} />
-        </Switch>
-        <Switch>
-          <Route exact path="/welcome" component={Welcome} />
-        </Switch>
+        <Switch></Switch>
       </Router>
     </div>
   );

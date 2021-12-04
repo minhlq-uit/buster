@@ -48,8 +48,12 @@ export default function Topbar(props) {
   const closeDropDownSearch = () => {
     setResults(false);
   };
+  const closeDropDownYear = () => {
+    setYearSelected(false);
+  };
   const refGenre = useDetectClickOutside({ onTriggered: closeDropDownGenre });
   const refSearch = useDetectClickOutside({ onTriggered: closeDropDownSearch });
+  const refYear = useDetectClickOutside({ onTriggered: closeDropDownYear });
   const refProfileSelected = useDetectClickOutside({
     onTriggered: closeDropDownProfileSelected,
   });
@@ -65,6 +69,11 @@ export default function Topbar(props) {
     };
     fetchData();
   }, [fetchURL]);
+
+  const logoutHandler = () => {
+    localStorage.removeItem("authToken");
+    history.push("/login");
+  };
   useEffect(() => {
     fetch(
       `
@@ -140,7 +149,7 @@ export default function Topbar(props) {
             </div>
           )}
         </div>
-        <div className="boxContainer">
+        <div className="boxContainer" ref={refYear}>
           <div
             className="yearBox"
             onClick={() => {
@@ -242,9 +251,9 @@ export default function Topbar(props) {
                 <span>Account</span>
                 <span>Help Center</span>
                 {/* <span onClick={routeChange}>Log Out</span> */}
-                <Link to="/login">
+                <div onClick={logoutHandler}>
                   <span>Log Out</span>
-                </Link>
+                </div>
               </div>
             </div>
           )}
