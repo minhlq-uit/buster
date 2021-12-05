@@ -14,7 +14,11 @@ export default function Home() {
   }, 1000);
   return (
     <div className="home">
-      {preloader && <Preloader />}
+      {preloader && (
+        <div className="preload">
+          <Preloader />
+        </div>
+      )}
       <Banner />
       {/* <ContinueWatching /> */}
       <div className="movieListContainer">

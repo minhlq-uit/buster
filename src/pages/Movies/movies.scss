@@ -16,7 +16,9 @@
       margin-top: 15px;
       overflow: hidden;
       margin-left: 25px;
+      display: flex;
       .container{
+        justify-content: center;
           display: flex;
           flex-direction: row;
           flex-wrap: wrap;
