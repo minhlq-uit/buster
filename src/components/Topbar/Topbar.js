@@ -140,6 +140,7 @@ export default function Topbar(props) {
                     onClick={() => {
                       setCurrGenres(genre.name);
                       setGenreSelected(false);
+                      window.scroll(0, 0);
                     }}
                   >
                     {genre.name}
@@ -174,6 +175,7 @@ export default function Topbar(props) {
                   if (e.keyCode === 13) {
                     history.push(`/movies/year_selected/${year}`);
                     setYearSelected(false);
+                    window.scroll(0, 0);
                   }
                 }}
                 onChange={(e) => setYear(e.target.value)}
@@ -197,7 +199,13 @@ export default function Topbar(props) {
                 query: `${query}`,
               }}
             >
-              <SearchIcon className="icon" onClick={() => setQuery("")} />
+              <SearchIcon
+                className="icon"
+                onClick={() => {
+                  setQuery("");
+                  window.scroll(0, 0);
+                }}
+              />
             </Link>
           </div>
         </form>

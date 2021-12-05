@@ -10,7 +10,7 @@ import "./navigation.scss";
 export default function Navigation(props) {
   const location = useLocation();
   return (
-    <div id="nav" className={`${props.show ? 'active' : ''}`}>
+    <div id="nav" className={`${props.show ? "active" : ""}`}>
       <div className="nav-item">
         <div className="logo">BUSTER</div>
       </div>
@@ -50,7 +50,9 @@ export default function Navigation(props) {
       <Link to="/my_list">
         <div
           className={
-            location.pathname === "/my_list" ? "nav-item--activated" : "nav-item"
+            location.pathname === "/my_list"
+              ? "nav-item--activated"
+              : "nav-item"
           }
           onClick={() =>window.scroll(0,0)}
         >
