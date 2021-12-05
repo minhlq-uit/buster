@@ -2,10 +2,20 @@ import SlideList from "../../components/SlideList/SlideList";
 import { category, movieType, tvType } from "../../api/tmdbApi";
 import MovieList from "../../components/MovieList/MovieList";
 import "./series.scss";
+import { useState } from "react";
+import Preloader from "../../components/Preloader/Preloader";
 
 export default function Series() {
+  //preloader
+  const [preloader, setPreloader] = useState(true);
+
+  setTimeout(() => {
+    setPreloader(false);
+  }, 1000);
+
   return (
     <div className="series">
+      {preloader && <Preloader />}
       <div className="main-title">Series For you</div>
       <SlideList type={movieType.top_rated} />
       <div className="movieListContainer">

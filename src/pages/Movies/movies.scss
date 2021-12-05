@@ -6,6 +6,7 @@
   }
 }
 .filter-list{
+  overflow-x: hidden;
   .listTitle {
     font-size: 60px;
     font-weight: 600;
@@ -16,7 +17,9 @@
       margin-top: 15px;
       overflow: hidden;
       margin-left: 25px;
+      display: flex;
       .container{
+        justify-content: center;
           display: flex;
           flex-direction: row;
           flex-wrap: wrap;

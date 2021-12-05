@@ -4,6 +4,7 @@ import tmdbApi from "../../../api/tmdbApi";
 import MovieListItem from "../../../components/MovieList/MovieListItem/MovieListItem";
 import { category } from "../../../api/tmdbApi";
 import CustomPagination from "../../../components/Pagination/CustomPagination";
+import Preloader from "../../../components/Preloader/Preloader";
 export default function Search() {
   const location = useLocation();
   const { query } = location;
@@ -13,6 +14,9 @@ export default function Search() {
   const [page, setPage] = useState(1);
   const [content, setContent] = useState([]);
   const [numOfPages, setNumOfPages] = useState();
+  //preload
+  const [preloader, setPreloader] = useState(true);
+  const tempLocation = location.pathname;
 
   useEffect(() => {
     const fectch = async () => {
@@ -26,9 +30,15 @@ export default function Search() {
     };
     fectch();
   }, [query, page]);
-
+  useEffect(() => {
+    setPreloader(true);
+  }, [tempLocation, page]);
+  setTimeout(() => {
+    setPreloader(false);
+  }, 1000);
   return (
     <div className="filter-list">
+      {preloader && <Preloader />}
       <span className="listTitle">{query}</span>
       <div className="movie-wrapper">
         <div className="container">
