@@ -120,6 +120,7 @@ export default function Register({ history }) {
             onChange={(e) => setEmail(e.target.value)}
             onBlur={handleEmail}
           />
+          {confirmEmail ? <span>Email invalid</span> : ''}
           <label>Password</label>
           <input
             type="password"
@@ -127,7 +128,7 @@ export default function Register({ history }) {
             onChange={(e) => setPassword(e.target.value)}
             onBlur={handlePassword}
           />
-
+          {checkPassword ? <span>Password must be at least 6 characters</span> : ''}
           <label>Confirm Password</label>
           <input
             type="password"
@@ -135,6 +136,7 @@ export default function Register({ history }) {
             onBlur={handleConfirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
+          {checkConfirmPassword ? <span>Re-password incorrect</span> : ''}
         </div>
         <button
           className="btn-signup"
@@ -148,7 +150,7 @@ export default function Register({ history }) {
         </p>
       </div>
 
-      <div className={`notice email ${confirmEmail ? "display" : "hidden"}`}>
+      {/* <div className={`notice email ${confirmEmail ? "display" : "hidden"}`}>
         <EmailIcon />
         <div className="incorrect-detail">
           <h3>Warning</h3>
@@ -181,7 +183,7 @@ export default function Register({ history }) {
           <h3>Warning</h3>
           <p>Confirm password incorrect!!!</p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

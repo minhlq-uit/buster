@@ -19,6 +19,7 @@ export default function Navigation(props) {
           className={
             location.pathname === "/" ? "nav-item--activated" : "nav-item"
           }
+          onClick={() =>window.scroll(0,0)}
         >
           <HomeIcon className="icon" />
           Home
@@ -29,6 +30,7 @@ export default function Navigation(props) {
           className={
             location.pathname === "/series" ? "nav-item--activated" : "nav-item"
           }
+          onClick={() =>window.scroll(0,0)}
         >
           <SeriesIcon className="icon" />
           Series
@@ -39,6 +41,7 @@ export default function Navigation(props) {
           className={
             location.pathname === "/movies" ? "nav-item--activated" : "nav-item"
           }
+          onClick={() =>window.scroll(0,0)}
         >
           <MoviesIcon className="icon" />
           Movies
@@ -49,6 +52,7 @@ export default function Navigation(props) {
           className={
             location.pathname === "/my_list" ? "nav-item--activated" : "nav-item"
           }
+          onClick={() =>window.scroll(0,0)}
         >
           <MyListIcon className="icon" />
           MyList
@@ -61,6 +65,7 @@ export default function Navigation(props) {
               ? "nav-item--activated"
               : "nav-item"
           }
+          onClick={() =>window.scroll(0,0)}
         >
           <DownloadsIcon className="icon" />
           Downloads
@@ -71,6 +76,7 @@ export default function Navigation(props) {
           className={
             location.pathname === "/news" ? "nav-item--activated" : "nav-item"
           }
+          onClick={() =>window.scroll(0,0)}
         >
           <NewsIcon className="icon" />
           News
@@ -83,6 +89,7 @@ export default function Navigation(props) {
               ? "nav-item--activated"
               : "nav-item"
           }
+          onClick={() =>window.scroll(0,0)}
         >
           <SettingsIcon className="icon" />
           Settings
