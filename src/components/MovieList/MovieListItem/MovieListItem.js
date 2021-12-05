@@ -9,20 +9,18 @@ const MovieListItem = (props) => {
   const background = apiConfig.w500Image(
     item.backdrop_path ? item.backdrop_path : item.poster_path
   );
-  let path = ''
+  let path = "";
   // const path = category === "tv" ? `/views/tv/${item.id}/play` : `views/movie/${item.id}/play`;
-  if(category === "tv") {
-    path =  `/views/tv/${item.id}/play`
+  if (category === "tv") {
+    path = `/views/tv/${item.id}/play`;
   } else {
-    path =  `/views/movie/${item.id}/play`
+    path = `/views/movie/${item.id}/play`;
   }
   // const pathInfo =
   //   category === "movie" ? `/movie/${item.id}` : `/tv/${item.id}`;
 
   return (
-    <div 
-      className="MovieListItem"
-    >
+    <div className="MovieListItem">
       <div className="wrap-img">
         <img src={background} alt="movie-img" />
         <Link to={path}>

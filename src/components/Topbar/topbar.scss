@@ -37,9 +37,16 @@
         border-radius: 5px;
         padding: 8px 6px 8px 12px;
         margin: 0px 20px;
+        justify-content: space-between;
         span {
           margin-right: 30px;
         }
+      }
+      .genreBox{
+        width: 180px;
+      }
+      .yearBox{
+        width: 150px;
       }
       .genreSelect {
         width: 390px;
