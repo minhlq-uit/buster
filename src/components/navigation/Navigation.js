@@ -7,19 +7,18 @@ import DownloadsIcon from "@mui/icons-material/Download";
 import NewsIcon from "@mui/icons-material/Forum";
 import SettingsIcon from "@mui/icons-material/Settings";
 import "./navigation.scss";
-export default function Navigation(props) {
+export default function Navigation() {
   const location = useLocation();
   return (
-    <div id="nav" className={`${props.show ? "active" : ""}`}>
+    <div id="nav">
       <div className="nav-item">
-        <div className="logo">BUSTER</div>
+        <div className="logo">REMO</div>
       </div>
       <Link to="/">
         <div
           className={
             location.pathname === "/" ? "nav-item--activated" : "nav-item"
           }
-          onClick={() =>window.scroll(0,0)}
         >
           <HomeIcon className="icon" />
           Home
@@ -30,7 +29,6 @@ export default function Navigation(props) {
           className={
             location.pathname === "/series" ? "nav-item--activated" : "nav-item"
           }
-          onClick={() =>window.scroll(0,0)}
         >
           <SeriesIcon className="icon" />
           Series
@@ -41,7 +39,6 @@ export default function Navigation(props) {
           className={
             location.pathname === "/movies" ? "nav-item--activated" : "nav-item"
           }
-          onClick={() =>window.scroll(0,0)}
         >
           <MoviesIcon className="icon" />
           Movies
@@ -50,11 +47,8 @@ export default function Navigation(props) {
       <Link to="/my_list">
         <div
           className={
-            location.pathname === "/my_list"
-              ? "nav-item--activated"
-              : "nav-item"
+            location.pathname === "/my_list" ? "nav-item--activated" : "nav-item"
           }
-          onClick={() =>window.scroll(0,0)}
         >
           <MyListIcon className="icon" />
           MyList
@@ -67,7 +61,6 @@ export default function Navigation(props) {
               ? "nav-item--activated"
               : "nav-item"
           }
-          onClick={() =>window.scroll(0,0)}
         >
           <DownloadsIcon className="icon" />
           Downloads
@@ -78,7 +71,6 @@ export default function Navigation(props) {
           className={
             location.pathname === "/news" ? "nav-item--activated" : "nav-item"
           }
-          onClick={() =>window.scroll(0,0)}
         >
           <NewsIcon className="icon" />
           News
@@ -91,7 +83,6 @@ export default function Navigation(props) {
               ? "nav-item--activated"
               : "nav-item"
           }
-          onClick={() =>window.scroll(0,0)}
         >
           <SettingsIcon className="icon" />
           Settings
