@@ -3,11 +3,20 @@ import MovieList from "../../components/MovieList/MovieList";
 import SlideList from "../../components/SlideList/SlideList";
 import "./movies.scss";
 import genre from "../../api/genre";
+import Preloader from "../../components/Preloader/Preloader";
+import { useState } from "react";
 
 export default function Movies() {
+  const [preloader, setPreloader] = useState(true);
+
+  setTimeout(() => {
+    setPreloader(false);
+  }, 1000);
+
   return (
     <div className="movies">
       <div className="main-title">Movies For You</div>
+      {preloader && <Preloader />}
       <SlideList type={movieType.popular} />
       <div className="movieListContainer">
         <MovieList

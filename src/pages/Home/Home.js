@@ -2,10 +2,19 @@ import MovieList from "../../components/MovieList/MovieList";
 import Banner from "../../components/Banner/Banner";
 import "./home.scss";
 import { category, movieType, tvType } from "../../api/tmdbApi";
+import { useState } from "react";
+import Preloader from "../../components/Preloader/Preloader";
 export default function Home() {
-  document.title = "BUSTER"
+  document.title = "BUSTER";
+  //preloader
+  const [preloader, setPreloader] = useState(true);
+
+  setTimeout(() => {
+    setPreloader(false);
+  }, 1000);
   return (
     <div className="home">
+      {preloader && <Preloader />}
       <Banner />
       {/* <ContinueWatching /> */}
       <div className="movieListContainer">
