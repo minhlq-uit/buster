@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useLocation, useParams } from "react-router";
 import apiConfig from "../../api/apiConfig";
 import tmdbApi from "../../api/tmdbApi";
 import { embedMovie, embedEpisode } from "../../api/embed";
 import Video from "../../components/Video";
 import Overview from "../../components/Overview";
 import MovieList from "../../components/MovieList/MovieList";
-import Cast from "../../components/Cast"
+import Cast from "../../components/Cast";
 import "./view.scss";
+import Preloader from "../../components/Preloader/Preloader";
 
 function Views() {
   const { category, id } = useParams();
@@ -18,6 +19,10 @@ function Views() {
   const [overview, setOverview] = useState({});
   const [movieDetails, setMovieDetails] = useState({});
   const [title, setTitle] = useState([]);
+  //preload
+  const location = useLocation();
+  const [preloader, setPreloader] = useState(true);
+  const tempLocation = location.pathname;
 
   const [titleIndex, setTitleIndex] = useState(0);
   const fetchMovie = async () => {
@@ -75,29 +80,35 @@ function Views() {
     fetchMovie();
     handleUrl();
     fetchDetails();
-    
   }, [id]);
 
-  const titles = document.querySelectorAll('.more-title')
+  useEffect(() => {
+    setPreloader(true);
+  }, [tempLocation]);
+  setTimeout(() => {
+    setPreloader(false);
+  }, 1000);
+
+  const titles = document.querySelectorAll(".more-title");
   titles.forEach((title, i) => {
-    if(i !== titleIndex) {
-      title.classList.remove("active")
+    if (i !== titleIndex) {
+      title.classList.remove("active");
     }
     title.onclick = () => {
-      setTitleIndex(i)
-      title.classList.add("active")
-    }
-  }) 
-  const contents = document.querySelectorAll('.more-content')
+      setTitleIndex(i);
+      title.classList.add("active");
+    };
+  });
+  const contents = document.querySelectorAll(".more-content");
   contents.forEach((content, i) => {
-    if(i !== titleIndex) {
-      content.classList.remove("active")
+    if (i !== titleIndex) {
+      content.classList.remove("active");
     }
-    if(i === titleIndex) {
-      content.classList.add("active")
+    if (i === titleIndex) {
+      content.classList.add("active");
     }
-  }) 
-  
+  });
+
   return (
     <div
       className="views"
@@ -105,6 +116,7 @@ function Views() {
         backgroundImage: `url(${apiConfig.originalImage(background)})`,
       }}
     >
+      {preloader && <Preloader />}
       <div className="views-top">
         <div className="views-top-left">
           <Overview title={title} overview={overview} all={false} />
@@ -120,12 +132,7 @@ function Views() {
         </ul>
         <div className="bot-more-content">
           <div className="more-content active">
-            <MovieList
-              category={category}
-              type="similar"
-              title=""
-              id={id}
-            />
+            <MovieList category={category} type="similar" title="" id={id} />
           </div>
           <ul className="more-content ">
             <Overview title="" overview={overview} all={true} />
@@ -133,10 +140,21 @@ function Views() {
           </ul>
         </div>
         <div className="more-trending">
-          {category === 'movie' ? 
-          <MovieList category={category} type={'trending'} title={"Trending Movies"} fire={true}/>
-          : <MovieList category={category} type={'trending'} title={"Trending TV"}  fire={true}/>
-          }
+          {category === "movie" ? (
+            <MovieList
+              category={category}
+              type={"trending"}
+              title={"Trending Movies"}
+              fire={true}
+            />
+          ) : (
+            <MovieList
+              category={category}
+              type={"trending"}
+              title={"Trending TV"}
+              fire={true}
+            />
+          )}
         </div>
       </div>
     </div>
