@@ -9,6 +9,8 @@ import MovieList from "../../components/MovieList/MovieList";
 import Cast from "../../components/Cast";
 import "./view.scss";
 import Preloader from "../../components/Preloader/Preloader";
+import AddIcon from "@mui/icons-material/Add";
+import axios from "axios";
 
 function Views() {
   const { category, id } = useParams();
@@ -24,12 +26,14 @@ function Views() {
   const [preloader, setPreloader] = useState(true);
   const tempLocation = location.pathname;
 
+  const [error, setError] = useState("");
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
-    })
-  },[])
+      behavior: "smooth",
+    });
+  }, []);
   const [titleIndex, setTitleIndex] = useState(0);
   const fetchMovie = async () => {
     const params = {};
@@ -114,7 +118,21 @@ function Views() {
       content.classList.add("active");
     }
   });
-
+  const addToMyList = async () => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+      },
+    };
+    try {
+      await axios.put("/api/myList/addListItem", { id }, config);
+    } catch (error) {
+      // localStorage.removeItem("authToken");
+      setError("You are not authorized please login");
+      console.log(error);
+    }
+  };
   return (
     <div
       className="views"
@@ -126,6 +144,10 @@ function Views() {
       <div className="views-top">
         <div className="views-top-left">
           <Overview title={title} overview={overview} all={false} />
+          <button className="addPlaylistBtn" onClick={(e) => addToMyList()}>
+            <AddIcon />
+            <span>My Playlist</span>
+          </button>
         </div>
         <div className="views-top-right">
           <Video src={src} />

@@ -23,6 +23,9 @@ const UserSchema = new mongoose.Schema({
     minlength: 6,
     select: false,
   },
+  profilePic: { type: String, default: "" },
+  myList: { type: Array, default: [] },
+  isAdmin: { type: Boolean, default: false },
   resetPasswordToken: String,
   resetPasswordExpire: Date,
 });
