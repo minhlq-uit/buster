@@ -48,10 +48,13 @@
             position: relative;
             display: block;
             cursor: pointer;
-            background-color: #1c8585;
+            background-color: #000;
             width: 50px;
             height: 24px;
             border-radius: calc(24px / 2);
+            &.useable {
+              background-color: #1c8585;
+            }
           }
           .check-slider::before {
             content: "";
@@ -64,13 +67,15 @@
             top: 12px - calc(20px / 2);
             transition: transform 150ms ease-in;
           }
-          input:checked + .check-slider::before {
-            // transform: translate(50px - 25px - 2px, -(33px - 21px) / 2);
-            transform: translate(50px - 25px);
-            transition: transform 150ms ease-in;
-            // width: 33px;
-            // height: 33px;
-            background-color: var(--main-color);
+          input:checked + .check-slider {
+            &.useable {
+              &::before {
+                transform: translate(50px - 25px);
+                transition: transform 150ms ease-in;
+                background-color: var(--main-color);
+              }
+            }
+            
           }
         }
       }

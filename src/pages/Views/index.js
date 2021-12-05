@@ -19,6 +19,12 @@ function Views() {
   const [movieDetails, setMovieDetails] = useState({});
   const [title, setTitle] = useState([]);
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  },[])
   const [titleIndex, setTitleIndex] = useState(0);
   const fetchMovie = async () => {
     const params = {};

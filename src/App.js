@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PrivateRoute from "./components/routing/PrivateRoute";
 import Login from "./pages/Login/Login";
@@ -23,14 +23,26 @@ import Welcome from "./pages/Welcome/Welcome";
 import ArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import "./app.scss";
 import Account from "./pages/Account/Account";
-
+import ScrollTop from "./components/ScrollTop";
+import {NavContext} from './pages/Settings/NavContext'
 function App() {
+  document.title = "BUSTER"
+
   const [showNav, setShowNav] = useState(true);
+  const context = useContext(NavContext);
   useEffect(() => {
-    setTimeout(() => {
+    let idTimeout
+    if(context.toggleNav){
+      idTimeout = setTimeout(() => {
       setShowNav(false);
-    }, 15000);
-  }, [showNav]);
+      }, 10000);
+    } else {
+      setShowNav(true);
+    }
+    return function cleanup() {
+      clearTimeout(idTimeout);
+    }
+  }, [context.toggleNav, showNav]);
   return (
     <div className="App">
       <Router>
@@ -51,6 +63,7 @@ function App() {
             <ArrowRight />
           </button>
           <Topbar show={showNav} />
+          <ScrollTop/>
         </div>
         <Switch>
           <div className={`main-container ${showNav ? "" : "full"}`}>
@@ -60,7 +73,9 @@ function App() {
             <Route exact path="/my_list" component={MyList} />
             <Route exact path="/news" component={News} />
             <Route exact path="/series" component={Series} />
-            <Route exact path="/settings" component={Settings} />
+            <Route exact path="/settings" 
+              component={Settings} 
+            />
             <Route exact path="/account" component={Account} />
 
             <PrivateRoute path="/views/:category/:id" component={Views} />
@@ -85,7 +100,6 @@ function App() {
             />
           </div>
         </Switch>
-        <Switch></Switch>
       </Router>
     </div>
   );

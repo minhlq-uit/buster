@@ -1,5 +1,9 @@
+import {useState, useContext} from 'react'
+import { NavContext } from './NavContext';
 import "./settings.scss";
+
 export default function Settings() {
+  const context = useContext(NavContext);
   return (
     <div className="settings">
       <div className="settings-container">
@@ -82,6 +86,20 @@ export default function Settings() {
               <label className="check-button">
                 <input type="checkbox" />
                 <span className="check-slider"></span>
+              </label>
+            </div>
+            <div className="settings-item">
+              <div>
+                <span>Toggle navigation</span>
+                <p>Navigation will auto hide after 10s</p>
+              </div>
+              <label className="check-button">
+                <input 
+                  type="checkbox" 
+                  checked={context.toggleNav}
+                  onChange={context.handleToggleNav}
+                />
+                <span className="check-slider useable"></span>
               </label>
             </div>
           </section>

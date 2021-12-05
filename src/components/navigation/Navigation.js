@@ -10,9 +10,9 @@ import "./navigation.scss";
 export default function Navigation(props) {
   const location = useLocation();
   return (
-    <div id="nav" className={props.show ? 'active' : ''}>
+    <div id="nav" className={`${props.show ? 'active' : ''}`}>
       <div className="nav-item">
-        <div className="logo">REMO</div>
+        <div className="logo">BUSTER</div>
       </div>
       <Link to="/">
         <div
