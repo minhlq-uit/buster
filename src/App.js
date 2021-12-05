@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PrivateRoute from "./components/routing/PrivateRoute";
 import Login from "./pages/Login/Login";
@@ -18,19 +18,18 @@ import Settings from "./pages/Settings/Settings";
 import Search from "./pages/Movies/Search/Search";
 import YearSelected from "./pages/Movies/YearSelected/YearSelected";
 import GenreSelected from "./pages/Movies/GenreSelected/GenreSelected";
-// import Login from "./pages/Login/Login"
-import Views from "./pages/Views"
-import Welcome from "./pages/Welcome/Welcome"
-import ArrowRight from '@mui/icons-material/KeyboardArrowRight';
+import Views from "./pages/Views";
+import Welcome from "./pages/Welcome/Welcome";
+import ArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import "./app.scss";
 
 function App() {
-  const [showNav, setShowNav] = useState(true)
+  const [showNav, setShowNav] = useState(true);
   useEffect(() => {
     setTimeout(() => {
-      setShowNav(false)
-    }, 15000)
-  }, [showNav])
+      setShowNav(false);
+    }, 15000);
+  }, [showNav]);
   return (
     <div className="App">
       <Router>
@@ -46,17 +45,14 @@ function App() {
           />
         </Switch>
         <div>
-          <Navigation show={showNav}/>
-          <button 
-            className="open-nav"
-            onClick={() => setShowNav(true)}
-          >
-            <ArrowRight/>
+          <Navigation show={showNav} />
+          <button className="open-nav" onClick={() => setShowNav(true)}>
+            <ArrowRight />
           </button>
-          <Topbar show={showNav}/>
+          <Topbar show={showNav} />
         </div>
         <Switch>
-          <div className={`main-container ${showNav ? '': 'full'}`}>
+          <div className={`main-container ${showNav ? "" : "full"}`}>
             <Route exact path="/" component={Home} />
             <Route exact path="/downloads" component={Downloads} />
             <Route exact path="/movies" component={Movies} />
