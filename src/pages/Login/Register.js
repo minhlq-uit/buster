@@ -109,19 +109,21 @@ export default function Register({ history }) {
           <label>User Name</label>
           <input
             type="text"
+            placeholder="team12"
             onChange={(e) => setUsername(e.target.value)}
             onBlur={handleUsername}
           />
-          <label>Email address</label>
+          <label>Email Address</label>
           <input
             type="text"
-            // placeholder="User Name..."
+            placeholder="team12@uit.edu.vn"
             onChange={(e) => setEmail(e.target.value)}
             onBlur={handleEmail}
           />
           <label>Password</label>
           <input
             type="password"
+            placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
             onChange={(e) => setPassword(e.target.value)}
             onBlur={handlePassword}
           />
@@ -129,6 +131,7 @@ export default function Register({ history }) {
           <label>Confirm Password</label>
           <input
             type="password"
+            placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
             onBlur={handleConfirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
           />

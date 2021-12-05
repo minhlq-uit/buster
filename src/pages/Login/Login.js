@@ -56,12 +56,13 @@ export default function Login({ history }) {
           <label>Email address</label>
           <input
             type="text"
-            placeholder="User Name..."
+            placeholder="team12@uit.edu.vn"
             onChange={(e) => setEmail(e.target.value)}
           />
           <label>Password</label>
           <input
             type="password"
+            placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
             onChange={(e) => setPassword(e.target.value)}
             onKeyDown={handleEnter}
           />

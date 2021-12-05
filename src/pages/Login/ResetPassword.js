@@ -49,10 +49,12 @@ const ResetPassword = ({ history, match }) => {
 
   return (
     <div className="resetpassword-screen">
+      <div className="mask"></div>
       <form
         onSubmit={resetPasswordHandler}
         className="resetpassword-screen__form"
       >
+        <h2>BUSTER</h2>
         <h3 className="resetpassword-screen__title">Forgot Password</h3>
         {error && <span className="error-message">{error} </span>}
         {success && (
@@ -61,24 +63,24 @@ const ResetPassword = ({ history, match }) => {
           </span>
         )}
         <div className="form-group">
-          <label htmlFor="password">New Password:</label>
+          <label htmlFor="password">New Password</label>
           <input
             type="password"
             required
             id="password"
-            placeholder="Enter new password"
+            placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
             autoComplete="true"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <div className="form-group">
-          <label htmlFor="confirmpassword">Confirm New Password:</label>
+          <label htmlFor="confirmpassword">Confirm New Password</label>
           <input
             type="password"
             required
             id="confirmpassword"
-            placeholder="Confirm new password"
+            placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
             autoComplete="true"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
