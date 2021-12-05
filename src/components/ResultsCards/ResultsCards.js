@@ -1,7 +1,7 @@
 import React from "react";
 import apiConfig from "../../api/apiConfig";
 import StarSolid from "../Star/StarSolid";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import "./ResultsCards.scss";
 export default function ResultsCards({ movie }) {
   const background = apiConfig.w500Image(
@@ -13,9 +13,8 @@ export default function ResultsCards({ movie }) {
       <div className="wrap-img">
         <img src={background} alt={`${movie.title} Poster`} />
         <Link to={path}>
-          <div className="play-btn-outer">
-              <div className="play-btn">
-              </div>
+          <div className="play-btn-outer" onClick={() => window.scroll(0, 0)}>
+            <div className="play-btn"></div>
           </div>
         </Link>
       </div>
