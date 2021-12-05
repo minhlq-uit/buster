@@ -26,7 +26,7 @@ export default function GenreSelected() {
   }, [id, page]);
   return (
     <div className="filter-list">
-      <span className="listTitle">{location.pathname.slice(22)}</span>
+      <span className="listTitle">{location.pathname.slice(23)}</span>
       <div className="movie-wrapper">
         <div className="container">
           {content.map((item, i) => (

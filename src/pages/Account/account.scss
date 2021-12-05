@@ -1,0 +1,161 @@
+.account {
+    .main-title {
+      font-size: 60px;
+      font-weight: 600;
+      margin: 20px 50px;
+    }
+    .notice{
+        border-bottom: 1px solid var(--secondary-text-color);
+        padding-bottom: 50px;
+        font-weight: 600;
+        font-size: 25px;
+        margin: 20px 50px;
+        
+        .content{
+            display: flex;
+            background-color: var(--main-color);
+            height: 70px;
+            align-items: center;
+            .icon{
+                font-size: 80;
+                margin-left: 20px;
+                // vertical-align: middle;
+            }
+            .notice-title{
+                margin-left: 30px;
+            }
+        }
+        
+    }
+    .member-billing{
+        max-height: 700px;
+        border-bottom: 1px solid var(--secondary-text-color);
+        padding-bottom: 20px;
+        .member-billing-title{
+            margin: 20px 50px;
+            font-size: 30px;
+            font-weight: 700;
+        }
+        
+        .content{
+            position: relative;
+            display: flex;
+            height: 600px;
+            // width: 40%;
+            width: 100%;
+            .processBar{
+                width: 45%;
+                margin: 20px 50px;
+            }
+            .info{
+                // margin-left: 80px;
+                margin-right: 50px;
+                width: 55%;
+                font-size: 20px;
+                line-height: 80px;
+                font-weight: 600;
+                color: var(--secondary-text-color);
+                .email{
+                    display: flex;
+                    justify-content: space-between;
+                    .info-email{
+                        color: var(--main-color);
+                    }
+                    .change-email{
+                        color: #337EF7;
+                        cursor: pointer;
+                    }
+                }
+                .password{
+                    display: flex;
+                    justify-content: space-between;
+                    
+                    .change-password{
+                        color: #337EF7;
+                        cursor: pointer;
+                    }
+                }
+                .phone{
+                    display: flex;
+                    justify-content: space-between;
+                    
+                    .change-phone{
+                        color: #337EF7;
+                        cursor: pointer;
+                    }
+                }
+                .date{
+                    display: flex;
+                    justify-content: space-between;
+                    .info-text{
+                        .info-date{
+                            color: var(--main-color);
+                        }
+                    }
+                    .payment{
+                        color: #337EF7;
+                        cursor: pointer;
+                    }
+                }
+                .bank{
+                    display: flex;
+                    justify-content: space-between;
+                    .detail{
+                        color: #337EF7;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    .plane-detail{
+        display: flex;
+        height: 100px;
+        align-items: center;
+        width: 100%;
+        border-bottom: 1px solid var(--secondary-text-color);
+        padding-bottom: 5px;
+        .plane-detail-title{
+            margin: 20px 50px;
+            font-size: 30px;
+            font-weight: 700;
+            width: 40%;
+        }
+        .abs{
+            font-size: 20px;
+            font-weight: 600;
+            width: 60%;
+            margin-left: 75px;
+            color: #337EF7;
+            cursor: pointer;
+        }
+    }
+    .user{
+        display: flex;
+        height: 100px;
+        align-items: center;
+        width: 100%;
+        border-bottom: 1px solid var(--secondary-text-color);
+        padding-bottom: 5px;
+        .user-title{
+            margin: 20px 50px;
+            font-size: 30px;
+            font-weight: 700;
+            width: 40%;
+        }
+        .user-img{
+            width: 60%;
+            margin-left: 75px;
+            display: flex;
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-right: 20px;
+                cursor: pointer;
+            }
+        }
+    }
+  }
+  

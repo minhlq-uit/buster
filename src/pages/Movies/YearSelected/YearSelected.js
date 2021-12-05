@@ -11,7 +11,7 @@ export default function YearSelected() {
   const [page, setPage] = useState(1);
   const [content, setContent] = useState([]);
   const [numOfPages, setNumOfPages] = useState();
-  const year = location.pathname.slice(21);
+  const year = location.pathname.slice(22);
   useEffect(() => {
     // setYear(location.pathname.slice(21));
     const fectch = async () => {
