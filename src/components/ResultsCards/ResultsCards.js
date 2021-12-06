@@ -9,28 +9,30 @@ export default function ResultsCards({ movie }) {
   );
   const path = `/views/movie/${movie.id}/play`;
   return (
-    <div className="result-container">
-      <div className="wrap-img">
-        <img src={background} alt={`${movie.title} Poster`} />
-        <Link to={path}>
-          <div className="play-btn-outer" onClick={() => window.scroll(0, 0)}>
-            <div className="play-btn"></div>
-          </div>
-        </Link>
-      </div>
-      <div className="container">
-        <span className="listTitle">{movie.title}</span>
-        <div className="details">
-          <div className="year">
-            {movie.release_date
-              ? movie.release_date.slice(0, 4)
-              : movie.first_air_date
-              ? movie.first_air_date.slice(0, 4)
-              : ""}{" "}
-            - {movie.vote_average} <StarSolid />
+    (movie.backdrop_path || movie.poster_path) && (
+      <div className="result-container">
+        <div className="wrap-img">
+          <img src={background} alt={`${movie.title} Poster`} />
+          <Link to={path}>
+            <div className="play-btn-outer" onClick={() => window.scroll(0, 0)}>
+              <div className="play-btn"></div>
+            </div>
+          </Link>
+        </div>
+        <div className="container">
+          <span className="listTitle">{movie.title}</span>
+          <div className="details">
+            <div className="year">
+              {movie.release_date
+                ? movie.release_date.slice(0, 4)
+                : movie.first_air_date
+                ? movie.first_air_date.slice(0, 4)
+                : ""}{" "}
+              - {movie.vote_average} <StarSolid />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    )
   );
 }

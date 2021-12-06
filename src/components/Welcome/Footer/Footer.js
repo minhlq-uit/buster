@@ -11,8 +11,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 function Footer() {
   return (
     <div className="footer-container">
-      <div className="footer-links">
-        {/* Logo and Social Networks */}
+      {/* <div className="footer-links">
         <div className="heading">
           <div className="logo">BUSTER</div>
           <div className="social-networks">
@@ -35,7 +34,6 @@ function Footer() {
           </div>
         </div>
 
-        {/* Links and Credit */}
         <div className="footer-link-wrapper">
           <div className="footer-link-items">
             <h2>COMPANY</h2>
@@ -65,13 +63,14 @@ function Footer() {
         </div>
       </div>
 
-      {/* Download */}
-      <section className="download">
+        <section className="download">
         <small className="platforms">
           <img src={Google} alt="google" />
           <img src={IOS} alt="IOS" />
         </small>
-      </section>
+      </section> */}
+      <p>COPYRIGHT BY</p>
+      <p>19251836 - 19521913 - 19521917 - 19520023 - 19521185</p>
     </div>
   );
 }

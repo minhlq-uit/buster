@@ -20,28 +20,30 @@ const MovieListItem = (props) => {
   //   category === "movie" ? `/movie/${item.id}` : `/tv/${item.id}`;
 
   return (
-    <div className="MovieListItem">
-      <div className="wrap-img">
-        <img src={background} alt="movie-img" />
-        <Link to={path}>
-          <div className="play-btn-outer" onClick={() => window.scroll(0, 0)}>
-            <div className="play-btn"></div>
+    (item.backdrop_path || item.poster_path) && (
+      <div className="MovieListItem">
+        <div className="wrap-img">
+          <img src={background} alt="movie-img" />
+          <Link to={path}>
+            <div className="play-btn-outer" onClick={() => window.scroll(0, 0)}>
+              <div className="play-btn"></div>
+            </div>
+          </Link>
+        </div>
+        <div className="item-info"></div>
+        <div className="title">{item.title || item.name}</div>
+        <div className="details">
+          <div className="year">
+            {item.release_date
+              ? item.release_date.slice(0, 4)
+              : item.first_air_date
+              ? item.first_air_date.slice(0, 4)
+              : ""}{" "}
+            - {Math.round(item.vote_average * 10) / 10} <StarSolid />
           </div>
-        </Link>
-      </div>
-      <div className="item-info"></div>
-      <div className="title">{item.title || item.name}</div>
-      <div className="details">
-        <div className="year">
-          {item.release_date
-            ? item.release_date.slice(0, 4)
-            : item.first_air_date
-            ? item.first_air_date.slice(0, 4)
-            : ""}{" "}
-          - {item.vote_average} <StarSolid />
         </div>
       </div>
-    </div>
+    )
   );
 };
 

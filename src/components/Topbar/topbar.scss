@@ -38,6 +38,7 @@
         padding: 8px 6px 8px 12px;
         margin: 0px 20px;
         justify-content: space-between;
+        cursor: pointer;
         span {
           margin-right: 30px;
         }
@@ -188,6 +189,20 @@
             color: white;
             height: 45px;
             line-height: 45px;
+            &:hover {
+              color: var(--main-color);
+              background-color: #1E4A47;
+              transition: ease 0.3s;
+            }
+          }
+          div {
+            height: 45px;
+            padding-top: 10px;
+            &:hover {
+              color: var(--main-color);
+              background-color: #1E4A47;
+              transition: ease 0.3s;
+            }
           }
         }
       }

@@ -24,24 +24,25 @@ import ArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import "./app.scss";
 import Account from "./pages/Account/Account";
 import ScrollTop from "./components/ScrollTop";
-import {NavContext} from './pages/Settings/NavContext'
+import { NavContext } from "./pages/Settings/NavContext";
+import Footer from './components/Welcome/Footer/Footer'
 function App() {
-  document.title = "BUSTER"
+  document.title = "BUSTER";
 
   const [showNav, setShowNav] = useState(true);
   const context = useContext(NavContext);
   useEffect(() => {
-    let idTimeout
-    if(context.toggleNav){
+    let idTimeout;
+    if (context.toggleNav) {
       idTimeout = setTimeout(() => {
-      setShowNav(false);
+        setShowNav(false);
       }, 10000);
     } else {
       setShowNav(true);
     }
     return function cleanup() {
       clearTimeout(idTimeout);
-    }
+    };
   }, [context.toggleNav, showNav]);
   return (
     <div className="App">
@@ -63,20 +64,19 @@ function App() {
             <ArrowRight />
           </button>
           <Topbar show={showNav} />
-          <ScrollTop/>
+          <ScrollTop />
+          {/* <Footer/> */}
         </div>
         <Switch>
           <div className={`main-container ${showNav ? "" : "full"}`}>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/downloads" component={Downloads} />
-            <Route exact path="/movies" component={Movies} />
-            <Route exact path="/my_list" component={MyList} />
-            <Route exact path="/news" component={News} />
-            <Route exact path="/series" component={Series} />
-            <Route exact path="/settings" 
-              component={Settings} 
-            />
-            <Route exact path="/account" component={Account} />
+            <PrivateRoute exact path="/" component={Home} />
+            <PrivateRoute exact path="/downloads" component={Downloads} />
+            <PrivateRoute exact path="/movies" component={Movies} />
+            <PrivateRoute exact path="/my_list" component={MyList} />
+            <PrivateRoute exact path="/news" component={News} />
+            <PrivateRoute exact path="/series" component={Series} />
+            <PrivateRoute exact path="/settings" component={Settings} />
+            <PrivateRoute exact path="/account" component={Account} />
 
             <PrivateRoute path="/views/:category/:id" component={Views} />
 

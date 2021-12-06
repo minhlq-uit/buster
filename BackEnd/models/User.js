@@ -23,6 +23,10 @@ const UserSchema = new mongoose.Schema({
     minlength: 6,
     select: false,
   },
+  profilePic: { type: String, default: "" },
+  myListMovie: { type: Array, default: [] },
+  myListSeries: { type: Array, default: [] },
+  isAdmin: { type: Boolean, default: false },
   resetPasswordToken: String,
   resetPasswordExpire: Date,
 });

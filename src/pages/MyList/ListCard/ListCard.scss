@@ -1,21 +1,44 @@
-.listCard{
-    display: flex;
+.listCard {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px var(--secondary-text-color) solid;
+  margin: 20px 30px;
+  padding: 20px;
+  font-weight: 600;
+  justify-content: space-between;
+  &:hover {
+    background-color: #57706c;
+  }
+
+  .listCard-info {
     cursor: pointer;
-    width: 100%;
-    justify-content: space-evenly;
-    align-items: center ;
-    border: 2px black;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    .listCard-info{
-        display: flex;
-        align-items: center;
-        img{
-            width: 250px;
-            
-        }
-        .listCard-title{
-            margin-left: 20px;
-        }
+    flex: 1;
+    display: flex;
+    align-items: center;
+    img {
+      width: 250px;
     }
+    .listCard-title {
+      margin-left: 20px;
+    }
+  }
+  .listCard-info2 {
+    display: flex;
+    align-items: center;
+    .listCard-icon {
+      &:hover {
+        color: red;
+      }
+      margin: 0 30px;
+      .listCard-icon1 {
+        font-size: 30px;
+      }
+    }
+    .listCard-minute {
+      margin: 0 100px;
+    }
+  }
+}
+.disabledListItem {
+  display: none;
 }

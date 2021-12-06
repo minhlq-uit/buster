@@ -2,7 +2,7 @@ import "./topbar.scss";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SearchIcon from "@mui/icons-material/Search";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import apiConfig from "../../api/apiConfig";
 import axios from "axios";
@@ -269,7 +269,9 @@ export default function Topbar(props) {
                     Account
                   </span>
                 </Link>
-                <span>Help Center</span>
+                <Link to=''>
+                  <span>Help Center</span>
+                </Link>
                 {/* <span onClick={routeChange}>Log Out</span> */}
                 <div onClick={logoutHandler}>
                   <span>Log Out</span>

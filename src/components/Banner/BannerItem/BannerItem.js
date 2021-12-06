@@ -1,11 +1,34 @@
 import { useEffect, useState } from "react";
 import "./bannerItem.scss";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import AddIcon from "@mui/icons-material/Add";
 import tmdbApi from "../../../api/tmdbApi";
 import apiConfig from "../../../api/apiConfig";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const BannerItem = ({ item }) => {
+  const [error, setError] = useState("");
+  const addToMyList = async (id) => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+      },
+    };
+    try {
+      if (item.name) {
+        await axios.put("/api/myList/addListItem/series", { id }, config);
+      } else {
+        await axios.put("/api/myList/addListItem/movie", { id }, config);
+      }
+    } catch (err) {
+      // localStorage.removeItem("authToken");
+      setError("You are not authorized please login");
+      console.log(error);
+    }
+  };
+
   const [genres, setGenres] = useState([]);
 
   useEffect(() => {
@@ -72,10 +95,13 @@ const BannerItem = ({ item }) => {
               </button>
             </Link>
 
-            {/* <button className="addPlaylistBtn">
+            <button
+              className="addPlaylistBtn"
+              onClick={(e) => addToMyList(item.id)}
+            >
               <AddIcon />
               <span>My Playlist</span>
-            </button> */}
+            </button>
           </div>
         </div>
       </>

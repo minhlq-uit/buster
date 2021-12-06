@@ -4,6 +4,8 @@ import "./Welcome.scss";
 import Intro from "../../components/Welcome/Intro/Intro";
 import Stream from "../../components/Welcome/Stream/Stream";
 import New from "../../components/Welcome/New/New";
+import Questions from "../../components/Welcome/Questions/Questions";
+import Footer from "../../components/Welcome/Footer/Footer";
 
 export default function Welcome() {
   return (
@@ -11,6 +13,8 @@ export default function Welcome() {
       <Intro />
       <Stream />
       <New />
+      <Questions />
+      <Footer />
     </div>
   );
 }

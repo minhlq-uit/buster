@@ -4,6 +4,7 @@ import "./home.scss";
 import { category, movieType, tvType } from "../../api/tmdbApi";
 import { useState } from "react";
 import Preloader from "../../components/Preloader/Preloader";
+import Footer from "../../components/Welcome/Footer/Footer";
 export default function Home() {
   document.title = "BUSTER";
   //preloader
@@ -52,6 +53,7 @@ export default function Home() {
           title="Popular Movies"
         />
       </div>
+      <Footer/>
     </div>
   );
 }

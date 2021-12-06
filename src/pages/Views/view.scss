@@ -1,71 +1,100 @@
 .views {
-    position: relative;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 200vh;
-    &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(20, 20, 20, .7);
-        z-index: 0;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(20, 20, 20, 0.7);
+    z-index: 0;
+  }
+  .views-top {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--main-color);
+    .views-top-left {
+      flex: 2;
+      padding: 50px;
+      z-index: 1;
     }
-    .views-top {
-        max-width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding-bottom: 10px;
-        border-bottom: 3px solid red;
-        .views-top-left {
-            flex: 2;
-            padding: 10px;
-            z-index: 1;
-        }
-        .views-top-right {
-            flex: 3;
-            padding-right: 10px;
-        }
+    .views-top-right {
+      flex: 3;
+      padding: 30px;
     }
-    .views-bot {
-        background: transparent;
-        position: absolute;
-        left: 0;
-        right: 0;
-        padding: 10px;
-        z-index: 1;
-        .bot-more-title {
-            display: flex;
-            gap: 30px;
-            
-            }
-            h4 {
-                font-size: 28px;
-                color: white;
-                &.active {
-                    border-bottom: 1px solid var(--main-color);
-            }
+    .addPlaylistBtn {
+      margin-top: 50px;
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 var(--main-color);
         }
-        .bot-more-content {
-            .more-content {
-                display: none;
-                &.active {
-                    display: block;
-                }
-            }
-        }
+      }
+      font-size: 1.1em;
+      color: var(--main-color);
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      font-weight: 500;
+      background-color: transparent;
+      border: solid var(--main-color) 2px;
+      border-radius: 4px;
+      padding: 10px 12px;
+      margin-right: 25px;
+      cursor: pointer;
+      span {
+        margin-left: 5px;
+      }
+      &:hover,
+      &:focus {
+        animation: pulse 1s;
+        box-shadow: 0 0 0 1em rgba(#fff, 0);
+      }
     }
-    .more-trending {
-        margin-top: 100px;
-        div {
-            span {
-                font-size: 28px;
-            }
-        }
+  }
+  .views-bot {
+    background: transparent;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding-top: 20px;
+    padding-left: 40px;
+    z-index: 1;
+    .bot-more-title {
+      display: flex;
+      gap: 30px;
+      .more-title {
+        cursor: pointer;
+      }
     }
-    
+    h4 {
+      font-size: 28px;
+      color: white;
+      &.active {
+        border-bottom: 1px solid var(--main-color);
+      }
+    }
+    .bot-more-content {
+      .more-content {
+        display: none;
+        &.active {
+          display: block;
+        }
+      }
+    }
+  }
+  .more-trending {
+    margin-top: 50px;
+    div {
+      span {
+        font-size: 28px;
+      }
+    }
+  }
 }

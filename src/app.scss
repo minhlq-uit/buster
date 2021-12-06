@@ -39,6 +39,7 @@ a {
     // color: white;
   }
   .main-container {
+    // padding-bottom: 100px;
     width: calc(100% - 100px);
     transform: translateX(100px) translateY(99px);
     &.full {
