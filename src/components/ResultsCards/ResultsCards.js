@@ -14,7 +14,7 @@ export default function ResultsCards({ movie }) {
         <div className="wrap-img">
           <img src={background} alt={`${movie.title} Poster`} />
           <Link to={path}>
-            <div className="play-btn-outer">
+            <div className="play-btn-outer" onClick={() => window.scroll(0, 0)}>
               <div className="play-btn"></div>
             </div>
           </Link>
