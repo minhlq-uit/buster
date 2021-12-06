@@ -39,7 +39,7 @@ export default function Account() {
           />
           <div className="info">
             <div className="email">
-              <p className="info-email">team03@gmail.com</p>
+              <p className="info-email">team12@gmail.com</p>
               <p className="change-email">Change email</p>
             </div>
             <div className="password">
@@ -53,7 +53,7 @@ export default function Account() {
             <div className="date">
               <p className="info-text">
                 Your next billing date is{" "}
-                <span className="info-date">December 31,2020</span>
+                <span className="info-date">December 31,2021</span>
               </p>
               <p className="payment">Manage payment</p>
             </div>
