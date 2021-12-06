@@ -89,7 +89,7 @@ export default function MovieList(props) {
       setList(response.results);
     };
     fetchData();
-  }, [props.id, props.category, props.type]);
+  }, [props.id, props.category, props.type, props.genre_id]);
 
   return (
     <div className="list">

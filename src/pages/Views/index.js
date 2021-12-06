@@ -126,8 +126,13 @@ function Views() {
       },
     };
     try {
-      await axios.put("/api/myList/addListItem", { id }, config);
-    } catch (error) {
+      if (category === "tv") {
+        console.log(id, category);
+        await axios.put("/api/myList/addListItem/series", { id }, config);
+      } else {
+        await axios.put("/api/myList/addListItem/movie", { id }, config);
+      }
+    } catch (err) {
       // localStorage.removeItem("authToken");
       setError("You are not authorized please login");
       console.log(error);

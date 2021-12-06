@@ -17,7 +17,11 @@ const BannerItem = ({ item }) => {
       },
     };
     try {
-      await axios.put("/api/myList/addListItem", { id }, config);
+      if (item.name) {
+        await axios.put("/api/myList/addListItem/series", { id }, config);
+      } else {
+        await axios.put("/api/myList/addListItem/movie", { id }, config);
+      }
     } catch (err) {
       // localStorage.removeItem("authToken");
       setError("You are not authorized please login");

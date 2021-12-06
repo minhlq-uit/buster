@@ -1,11 +1,18 @@
 .listCard {
   display: flex;
-  cursor: pointer;
   align-items: center;
-  border: 2px black;
-  margin: 20px 50px;
+  border-bottom: 1px var(--secondary-text-color) solid;
+  margin: 20px 30px;
+  padding: 20px;
+  font-weight: 600;
   justify-content: space-between;
+  &:hover {
+    background-color: #57706c;
+  }
+
   .listCard-info {
+    cursor: pointer;
+    flex: 1;
     display: flex;
     align-items: center;
     img {
@@ -13,6 +20,22 @@
     }
     .listCard-title {
       margin-left: 20px;
+    }
+  }
+  .listCard-info2 {
+    display: flex;
+    align-items: center;
+    .listCard-icon {
+      &:hover {
+        color: red;
+      }
+      margin: 0 30px;
+      .listCard-icon1 {
+        font-size: 30px;
+      }
+    }
+    .listCard-minute {
+      margin: 0 100px;
     }
   }
 }

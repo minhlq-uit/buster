@@ -1,29 +1,59 @@
-exports.getMyList = async (req, res, next) => {
-  const myList = req.user.myList;
+exports.getMyListMovie = async (req, res, next) => {
+  const myListMovie = req.user.myListMovie;
   res.status(200).json({
     success: true,
-    data: myList,
+    data: myListMovie,
   });
 };
 
-exports.deleteMyListItem = async (req, res, next) => {
+exports.deleteMyListMovieItem = async (req, res, next) => {
   const user = req.user;
   const { id } = req.body;
-  user.myList.pull(id);
+  user.myListMovie.pull(id);
   await user.save();
   res.status(200).json({
     success: true,
-    myList: user.myList,
+    myListMovie: user.myListMovie,
   });
 };
 
-exports.addMyListItem = async (req, res, next) => {
+exports.addMyListMovieItem = async (req, res, next) => {
   const user = req.user;
   const { id } = req.body;
-  user.myList.addToSet(id);
+  user.myListMovie.addToSet(id);
   await user.save();
   res.status(200).json({
     success: true,
-    myList: user.myList,
+    myListMovie: user.myListMovie,
+  });
+};
+
+exports.getMyListSeries = async (req, res, next) => {
+  const myListSeries = req.user.myListSeries;
+  res.status(200).json({
+    success: true,
+    data: myListSeries,
+  });
+};
+
+exports.deleteMyListSeriesItem = async (req, res, next) => {
+  const user = req.user;
+  const { id } = req.body;
+  user.myListSeries.pull(id);
+  await user.save();
+  res.status(200).json({
+    success: true,
+    myListSeries: user.myListSeries,
+  });
+};
+
+exports.addMyListSeriesItem = async (req, res, next) => {
+  const user = req.user;
+  const { id } = req.body;
+  user.myListSeries.addToSet(id);
+  await user.save();
+  res.status(200).json({
+    success: true,
+    myListSeries: user.myListSeries,
   });
 };
