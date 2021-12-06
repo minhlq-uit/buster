@@ -269,7 +269,9 @@ export default function Topbar(props) {
                     Account
                   </span>
                 </Link>
-                <span>Help Center</span>
+                <Link to=''>
+                  <span>Help Center</span>
+                </Link>
                 {/* <span onClick={routeChange}>Log Out</span> */}
                 <div onClick={logoutHandler}>
                   <span>Log Out</span>
